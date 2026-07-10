@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin e Padding</title>
+
+    <style>
+
+        /* ==========================================================
+   MARGIN E PADDING NO CSS
+
+   Margin e Padding controlam o espaçamento dos elementos,
+   porém possuem funções diferentes.
+
+   Box Model:
+
+        Margin (espaço externo)
+   ┌──────────────────────────────┐
+   │          Border              │
+   │  ┌────────────────────────┐  │
+   │  │       Padding          │  │
+   │  │  ┌──────────────────┐  │  │
+   │  │  │    Conteúdo      │  │  │
+   │  │  └──────────────────┘  │  │
+   │  └────────────────────────┘  │
+   └──────────────────────────────┘
+
+   ==========================================================
+   PADDING
+   ==========================================================
+
+   O `padding` cria um espaço INTERNO entre o conteúdo e a borda.
+
+   Exemplo:
+
+   padding: 20px;
+
+   Resultado:
+   O conteúdo ficará afastado da borda em 20px.
+
+   ----------------------------------------------------------
+   FORMAS DE UTILIZAÇÃO
+   ----------------------------------------------------------
+
+   Todos os lados: padding: 20px;
+
+   Vertical | Horizontal:
+   padding: 20px 40px;
+
+   Topo | Horizontal | Base:
+   padding: 20px 40px 10px;
+
+   Topo | Direita | Base | Esquerda:
+   padding: 20px 30px 10px 15px;
+
+   ----------------------------------------------------------
+   PROPRIEDADES INDIVIDUAIS
+   ----------------------------------------------------------
+
+   padding-top
+   padding-right
+   padding-bottom
+   padding-left
+
+   Exemplo:
+
+   padding-left: 25px;
+
+   ----------------------------------------------------------
+   APLICAÇÕES
+   ----------------------------------------------------------
+
+   ✔ Aumentar a área clicável de botões.
+   ✔ Criar espaço interno em cards.
+   ✔ Melhorar a leitura de textos.
+   ✔ Evitar que o conteúdo fique "colado" na borda.
+
+   ==========================================================
+   MARGIN
+   ==========================================================
+
+   O `margin` cria um espaço EXTERNO entre um elemento e os
+   elementos ao seu redor.
+
+   Exemplo:
+
+   margin: 20px;
+
+   Resultado:
+   O elemento ficará afastado dos elementos vizinhos.
+
+   ----------------------------------------------------------
+   FORMAS DE UTILIZAÇÃO
+   ----------------------------------------------------------
+
+   Todos os lados
+
+   margin: 20px;
+
+   Vertical | Horizontal:
+   margin: 20px 40px;
+
+   Topo | Horizontal | Base:
+   margin: 20px 40px 10px;
+
+   Topo | Direita | Base | Esquerda:
+   margin: 20px 30px 10px 15px;
+
+   ----------------------------------------------------------
+   PROPRIEDADES INDIVIDUAIS
+   ----------------------------------------------------------
+
+   margin-top
+   margin-right
+   margin-bottom
+   margin-left
+
+   Exemplo:
+
+   margin-top: 30px;
+
+   ----------------------------------------------------------
+   MARGIN: AUTO
+   ----------------------------------------------------------
+
+   Muito utilizado para centralizar elementos.
+
+   Exemplo:
+
+   width: 400px;
+   margin: 0 auto;
+
+   O elemento ficará centralizado horizontalmente.
+
+   ----------------------------------------------------------
+   APLICAÇÕES
+   ----------------------------------------------------------
+
+   ✔ Separar elementos.
+   ✔ Criar espaçamento entre seções.
+   ✔ Centralizar elementos com margin: auto.
+   ✔ Organizar o layout da página.
+
+   ==========================================================
+   DIFERENÇA ENTRE MARGIN E PADDING
+   ==========================================================
+
+   PADDING
+   → Espaço INTERNO.
+   → Aumenta a área do elemento.
+   → Fica entre o conteúdo e a borda.
+
+   MARGIN
+   → Espaço EXTERNO.
+   → Afasta um elemento dos outros.
+   → Não aumenta a área interna.
+
+        */
+
+        #margin-padding {
+            border: 5px solid orange;
+            margin: 20px;
+            padding: 20px;
+
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <div id="margin-padding">
+         <h1>Modelo de Margin e Padding Lorem</h1>
+
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Fugit expedita quod, voluptate sapiente fugiat,
+            modi iure recusandae aperiam amet accusamus, 
+            ea libero odit perspiciatis aspernatur distinctio eaque.
+            Quae, modi eum!
+        </p>
+    </div>
+   
+    
+</body>
+</html>

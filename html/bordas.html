@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordas</title>
+
+    <style>
+
+        /* ==========================================================
+   TIPOS DE BORDAS (border) NO CSS
+
+   A propriedade `border` define a borda ao redor de um elemento.
+
+   Sintaxe:
+   border: largura estilo cor;
+
+   Exemplo:
+   border: 2px solid #000;
+
+   ----------------------------------------------------------
+   ESTILOS DE BORDA
+   ----------------------------------------------------------
+
+   none    -> Sem borda. (Padrão em muitos elementos)
+              Ex.: border: none;
+
+   solid   -> Linha contínua.
+              Uso: Botões, formulários, cards e layouts em geral.
+
+   dashed  -> Linha tracejada.
+              Uso: Áreas de upload, caixas de aviso e destaques.
+
+   dotted  -> Linha pontilhada.
+              Uso: Separadores discretos ou elementos decorativos.
+
+   double  -> Duas linhas paralelas.
+              Uso: Títulos, certificados e destaques especiais.
+
+   groove  -> Efeito de borda "entalhada" (3D).
+              Uso: Interfaces com aparência clássica.
+
+   ridge   -> Efeito de borda "elevada" (3D).
+              Uso: Elementos decorativos.
+
+   inset   -> Faz o elemento parecer afundado.
+              Uso: Campos de entrada e botões pressionados.
+
+   outset  -> Faz o elemento parecer elevado.
+              Uso: Botões e componentes com efeito de relevo.
+
+   hidden  -> Oculta a borda (semelhante ao none em muitos casos,
+              porém possui comportamento diferente em tabelas).
+
+   ----------------------------------------------------------
+   PROPRIEDADES INDIVIDUAIS
+   ----------------------------------------------------------
+
+   border-width  -> Define a espessura.
+                    Ex.: border-width: 3px;
+
+   border-style  -> Define o estilo.
+                    Ex.: border-style: solid;
+
+   border-color  -> Define a cor.
+                    Ex.: border-color: blue;
+
+   border-radius -> Arredonda os cantos.
+                    Ex.: border-radius: 10px;
+
+   ----------------------------------------------------------
+   BORDAS ESPECÍFICAS
+   ----------------------------------------------------------
+
+   border-top
+   border-right
+   border-bottom
+   border-left
+
+   Exemplo:
+   border-bottom: 2px solid red;
+
+   Também existem:
+
+   border-top-width
+   border-top-style
+   border-top-color
+
+   (e equivalentes para right, bottom e left)
+         */
+
+        h1 {
+            background-color: orange;
+            border-bottom: dotted black ;
+            padding: 10px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+                    }
+
+        p {
+            background-color: lightsteelblue;
+            border-right: 12px solid darkslateblue;
+            border-left: 12px solid darkslateblue;
+            border-radius: 40px;
+            padding: 10px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+     <h1>Modelo de bordas Lorem</h1>
+
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit expedita quod, voluptate sapiente fugiat,
+        modi iure recusandae aperiam amet accusamus, 
+        ea libero odit perspiciatis aspernatur distinctio eaque.
+        Quae, modi eum!
+    </p>
+    
+</body>
+</html>
