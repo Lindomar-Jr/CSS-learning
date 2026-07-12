@@ -1,21 +1,26 @@
-a {
-   color: green;
+/*exemplo-americanas.html*/
+
+a { 
+   background: white;
+   border: 2px solid gray;
+   border-radius: 5px;
+   color: black;
+   padding: 5px;
+   margin: 2px;
+   display: inline-block;
 }
 
-p {
-   color: indianred; 
+#topo{
+   background: red;
+   margin-bottom: 2px;
+   padding: 10px;
+   border-radius: 10px;
 }
 
-li {
-   background-color: lightblue;
-   border: 2px solid blue;
+#promocao{
+   background: lightgray;
 }
 
-table {
-    background-color: orange;
-    border: 5px solid darkred;
-}
-
-td {
-    border: 5px solid black;
+.destaque{
+   background: lightcoral;
 }
