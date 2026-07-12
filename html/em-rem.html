@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em-Rem</title>
+
+    <style>
+        
+        /*em -> relativo ao tamanho do pai
+         rem -> font-size pré definido pela medida padrão do html*/
+
+       /* Tamanho padrão da página */
+html {
+    font-size: 16px;
+}
+
+/* A div aumenta a fonte para 40px */
+.container {
+    font-size: 40px;
+    border: 2px solid black;
+    padding: 20px;
+    width: 400px;
+}
+
+/* Relativo ao elemento pai (.container = 40px) */
+.texto-em {
+    font-size: 1em;
+    color: blue;
+}
+
+/* Relativo ao elemento html (16px) */
+.texto-rem {
+    font-size: 2rem; /* 2x16px*/
+    color: red;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Unidades EM e REM:</h1>
+
+    <div class="container">
+        <p class="texto-em">
+            Este texto utiliza <strong>em</strong>.
+        </p>
+
+        <hr>
+
+        <p class="texto-rem">
+            Este texto utiliza <strong>rem</strong>.
+        </p>
+    </div>
+
+</body>
+</html>
