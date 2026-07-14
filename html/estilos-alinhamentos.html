@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos e alinhamentos</title>
+
+    <style>
+
+        body {
+            font-size: 1.5em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .negrito {
+            /*bold, normal, 100 até 900 */
+            font-weight: 900;
+        }
+
+        .estilo {
+            /*normal, italic, oblique*/
+            font-style: italic;
+        }
+
+        .transformacao {
+            /* uppercase, lowercase, capitalize */
+            text-transform: capitalize;
+        }
+
+        .decoracao {
+            /* none, underline, overline, line-through*/
+            text-decoration: underline;
+        }
+
+        .entrelinhas {
+            border: 1px solid green;
+            line-height: 3em;
+        }
+
+        .espacamento {
+            letter-spacing: 0.3em; /* espaçamento entre letras */
+            word-spacing:  1em; /* espaçamento entre palavras */
+        }
+
+        .recuo {
+            text-indent:-1em;
+        }
+
+        .alinhamento {
+            /*text-align: left right, center, justify*/
+            text-align:  center;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Formatações de texto:</h1>
+
+    <p>Texto normal</p>
+    <p class="negrito">Texto em negrito</p>
+    <p class="estilo">Texto com estilo</p>
+    <p class="transformacao">Texto com transformação</p>
+    <p class="decoracao">Texto com decoração</p>
+    <p class="entrelinhas">Texto entre linhas</p>
+    <p class="espacamento">Texto com espaço entre letras e palavras</p>
+    <p class="recuo">Texto recuado</p>
+
+    <h1>Alihamentos de texto:</h1>
+
+    <p class="alinhamento">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Deleniti vitae animi, quis odio voluptates,
+        sed aspernatur voluptatem quo iste ipsam,
+        veniam cumque quia incidunt mollitia labore ab architecto.
+        Voluptates, accusamus.
+    </p>
+    
+</body>
+</html>
