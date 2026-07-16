@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores CSS</title>
+
+    <style>
+
+        /*====================================================
+            SELETOR UNIVERSAL
+        ====================================================*/
+
+        /*
+        * Seleciona TODOS os elementos da página.
+
+        Muito utilizado para:
+        - remover margens padrão;
+        - remover paddings padrão;
+        - definir box-sizing.
+        */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /*====================================================
+            SELETOR DE TAG
+        ====================================================*/
+
+        /*
+        Seleciona todas as ocorrências da tag.
+        */
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        h2{
+            margin-top: 25px;
+            color: darkblue;
+        }
+
+        p{
+            margin: 8px 0;
+        }
+
+
+        /*====================================================
+            SELETOR DE CLASSE
+        ====================================================*/
+
+        /*
+        Classes começam com ponto (.)
+
+        Uma classe pode ser utilizada
+        em vários elementos.
+        */
+
+        .destaque{
+            background: gold;
+            padding: 10px;
+        }
+
+        .texto-verde{
+            color: green;
+            font-weight: bold;
+        }
+
+
+        /*====================================================
+            SELETOR DE ID
+        ====================================================*/
+
+        /*
+        IDs começam com #
+
+        Devem ser únicos na página.
+
+        Muito utilizados em:
+        - Cabeçalho
+        - Menu
+        - Rodapé
+        */
+
+        #cabecalho{
+            background: steelblue;
+            color: white;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+
+        /*====================================================
+            SELETOR DESCENDENTE (espaço)
+        ====================================================*/
+
+        /*
+        Seleciona TODOS os elementos
+        que estejam dentro de outro.
+
+        article p
+
+        Todos os <p> dentro do article
+        receberão esta formatação.
+        */
+
+        article p{
+            color: purple;
+        }
+
+
+        /*====================================================
+            SELETOR FILHO DIRETO (>)
+        ====================================================*/
+
+        /*
+        Seleciona apenas os filhos imediatos.
+
+        .caixa > p
+
+        Apenas o primeiro <p> será estilizado.
+        */
+
+        .caixa > p{
+            color: blue;
+            font-weight: bold;
+        }
+
+
+        /*====================================================
+            IRMÃO ADJACENTE (+)
+        ====================================================*/
+
+        /*
+        Seleciona apenas o primeiro
+        elemento imediatamente abaixo.
+
+        h3 + p
+        */
+
+        h3 + p{
+            border-left: 5px solid green;
+            padding-left: 10px;
+        }
+
+
+        /*====================================================
+            IRMÃOS GERAIS (~)
+        ====================================================*/
+
+        /*
+        Seleciona TODOS os irmãos
+        que aparecem depois.
+
+        h4 ~ p
+        */
+
+        h4 ~ p{
+            background: #ddd;
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header id="cabecalho">
+
+        <h1>Estudando Seletores CSS</h1>
+
+        <p>
+            Este cabeçalho está sendo estilizado por um ID.
+        </p>
+
+    </header>
+
+
+    <h2>Classe</h2>
+
+    <p class="destaque">
+        Este parágrafo utiliza a classe "destaque".
+    </p>
+
+    <p class="texto-verde">
+        Este utiliza outra classe.
+    </p>
+
+    <p>
+        Este não possui nenhuma classe.
+    </p>
+
+
+    <h2>Descendente</h2>
+
+    <article>
+
+        <p>
+            Este parágrafo está dentro do article.
+        </p>
+
+        <div>
+
+            <p>
+                Este também está dentro do article.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <h2>Filho Direto</h2>
+
+    <div class="caixa">
+
+        <p>
+            Sou filho direto da div.
+        </p>
+
+        <section>
+
+            <p>
+                Eu NÃO sou filho direto.
+                Sou neto da div.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <h2>Irmão Adjacente (+)</h2>
+
+    <h3>Título</h3>
+
+    <p>
+        Apenas eu recebo a borda verde.
+    </p>
+
+    <p>
+        Eu não recebo.
+    </p>
+
+    <p>
+        Nem eu.
+    </p>
+
+
+    <h2>Irmãos Gerais (~)</h2>
+
+    <h4>Outro título</h4>
+
+    <p>Primeiro irmão.</p>
+
+    <p>Segundo irmão.</p>
+
+    <p>Terceiro irmão.</p>
+
+</body>
+
+</html>
