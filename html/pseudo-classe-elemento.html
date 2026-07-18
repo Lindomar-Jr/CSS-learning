@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pseudo-classes e Pseudo-elementos</title>
+
+	<style>
+
+		/*=========================================================
+			PSEUDO-CLASSES
+			---------------------------------------------------------
+			São utilizadas para alterar o estado de um elemento.
+
+			Sintaxe:
+
+			seletor:pseudo-classe
+
+			Exemplo:
+
+			button:hover
+		=========================================================*/
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background: #f4f4f4;
+			margin: 40px;
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+
+		section {
+			width: 700px;
+			margin: 20px auto;
+			padding: 20px;
+			background: white;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+		}
+
+		/*---------------------------------------------------------
+			:hover
+
+			Aplica um estilo quando o mouse passa sobre o elemento.
+
+			Muito utilizado em:
+
+			• Botões
+			• Links
+			• Menus
+			• Cards
+		---------------------------------------------------------*/
+
+		.botao {
+			padding: 12px 20px;
+			background: #3498db;
+			color: white;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: .3s;
+		}
+
+		.botao:hover {
+			background: #2ecc71;
+		}
+
+		/*---------------------------------------------------------
+			:active
+
+			Aplica um estilo enquanto o elemento está sendo clicado.
+		---------------------------------------------------------*/
+
+		.clique:active {
+			background: red;
+			color: white;
+		}
+
+		/*---------------------------------------------------------
+			:focus
+
+			Aplica um estilo quando o elemento recebe foco.
+
+			Muito utilizado em formulários.
+		---------------------------------------------------------*/
+
+		input:focus {
+			border: 3px solid royalblue;
+			outline: none;
+			background: #eef7ff;
+		}
+
+		/*---------------------------------------------------------
+			:first-child
+
+			Seleciona o primeiro filho de um elemento.
+		---------------------------------------------------------*/
+
+		.lista li:first-child {
+			color: red;
+			font-weight: bold;
+		}
+
+		/*---------------------------------------------------------
+			:last-child
+
+			Seleciona o último filho.
+		---------------------------------------------------------*/
+
+		.lista li:last-child {
+			color: green;
+			font-weight: bold;
+		}
+
+		/*---------------------------------------------------------
+			:nth-child()
+
+			Seleciona um filho específico.
+
+			Exemplos:
+
+			:nth-child(2)
+			:nth-child(3)
+			:nth-child(even)
+			:nth-child(odd)
+		---------------------------------------------------------*/
+
+		.lista li:nth-child(3) {
+			background: gold;
+		}
+
+		/*---------------------------------------------------------
+			:checked
+
+			Seleciona checkbox ou radio marcados.
+		---------------------------------------------------------*/
+
+		input[type="checkbox"]:checked + label {
+			color: green;
+			font-weight: bold;
+		}
+
+		/*---------------------------------------------------------
+			:disabled
+
+			Seleciona campos desabilitados.
+		---------------------------------------------------------*/
+
+		input:disabled {
+			background: #ddd;
+			cursor: not-allowed;
+		}
+
+		/*=========================================================
+			PSEUDO-ELEMENTOS
+			---------------------------------------------------------
+			Permitem estilizar ou criar partes específicas de um
+			elemento.
+
+			Sintaxe:
+
+			seletor::pseudo-elemento
+
+			Exemplo:
+
+			p::first-letter
+		=========================================================*/
+
+		/*---------------------------------------------------------
+			::first-letter
+
+			Estiliza apenas a primeira letra de um texto.
+
+			Muito utilizado em artigos e blogs.
+		---------------------------------------------------------*/
+
+		.texto::first-letter {
+			font-size: 40px;
+			font-weight: bold;
+			color: red;
+		}
+
+		/*---------------------------------------------------------
+			::first-line
+
+			Estiliza somente a primeira linha do texto.
+
+			O tamanho da linha depende da largura do elemento.
+		---------------------------------------------------------*/
+
+		.texto::first-line {
+			color: royalblue;
+			font-style: italic;
+		}
+
+		/*---------------------------------------------------------
+			::before
+
+			Insere conteúdo ANTES do elemento.
+
+			O conteúdo é criado através da propriedade content.
+		---------------------------------------------------------*/
+
+		.importante::before {
+			content: " { ";
+			color: red;
+		}
+
+		/*---------------------------------------------------------
+			::after
+
+			Insere conteúdo DEPOIS do elemento.
+		---------------------------------------------------------*/
+
+		.importante::after {
+            content: " } ";
+			color: green;
+		}
+
+		/*---------------------------------------------------------
+			::selection
+
+			Altera a aparência do texto selecionado pelo usuário.
+		---------------------------------------------------------*/
+
+		::selection {
+			background: black;
+			color: yellow;
+		}
+
+		/*---------------------------------------------------------
+			::marker
+
+			Personaliza o marcador das listas.
+
+			Aplica-se ao <li>, não ao <ul>.
+		---------------------------------------------------------*/
+
+		.lista li::marker {
+			color: orange;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<h1>Pseudo-classes e Pseudo-elementos</h1>
+
+	<section>
+
+		<h2>Pseudo-classes</h2>
+
+		<h3>:hover</h3>
+
+		<a href="#" class="botao">
+			Passe o mouse aqui
+		</a>
+
+		<hr>
+
+		<h3>:active</h3>
+
+		<button class="clique">
+			Clique e segure
+		</button>
+
+		<hr>
+
+		<h3>:focus</h3>
+
+		<input
+			type="text"
+			placeholder="Clique aqui">
+
+		<hr>
+
+		<h3>:first-child, :last-child e :nth-child()</h3>
+
+		<ul class="lista">
+
+			<li>Primeiro Item</li>
+			<li>Segundo Item</li>
+			<li>Terceiro Item</li>
+			<li>Quarto Item</li>
+			<li>Último Item</li>
+
+		</ul>
+
+		<hr>
+
+		<h3>:checked</h3>
+
+		<input
+			type="checkbox"
+			id="html">
+
+		<label for="html">
+			Aprendendo HTML
+		</label>
+
+		<br><br>
+
+		<input
+			type="checkbox"
+			id="css">
+
+		<label for="css">
+			Aprendendo CSS
+		</label>
+
+		<hr>
+
+		<h3>:disabled</h3>
+
+		<input
+			type="text"
+			value="Campo desabilitado"
+			disabled>
+
+	</section>
+
+	<section>
+
+		<h2>Pseudo-elementos</h2>
+
+		<h3>::first-letter e ::first-line</h3>
+
+		<p class="texto">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			Expedita aspernatur beatae, fugiat pariatur dolores
+			laboriosam voluptatem molestiae numquam quas.
+			Consequatur explicabo rem exercitationem eaque deserunt
+			deleniti recusandae tempore! Consequatur, perspiciatis.
+		</p>
+
+		<hr>
+
+		<h3>::before e ::after</h3>
+
+		<p class="importante">
+			Conteúdo importante para o usuário.
+		</p>
+
+		<hr>
+
+		<h3>::selection</h3>
+
+		<p>
+			Selecione este texto com o mouse para visualizar o efeito.
+		</p>
+
+	</section>
+
+</body>
+
+</html>
