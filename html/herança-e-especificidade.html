@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Herança e Especificidade CSS</title>
+
+    <style>
+
+        /*=================================================
+        =               HERANÇA (Inheritance)             =
+        ===================================================
+
+        Herança significa que alguns estilos aplicados
+        ao elemento pai são automaticamente herdados
+        pelos elementos filhos.
+
+        Exemplos de propriedades herdáveis:
+
+        ✔ color
+        ✔ font-size
+        ✔ font-family
+        ✔ line-height
+        ✔ text-align
+        ✔ visibility
+
+        Exemplos de propriedades NÃO herdáveis:
+
+        ✖ border
+        ✖ margin
+        ✖ padding
+        ✖ width
+        ✖ height
+        ✖ background
+
+        =================================================*/
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            font-size: 18px;
+        }
+
+        /*
+            Todo o conteúdo da página herdará:
+
+            font-family
+            color
+            font-size
+
+            Pois essas propriedades são herdáveis.
+        */
+
+        section {
+            border: 2px solid #444;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /*
+            A borda NÃO será herdada pelos elementos internos.
+            Somente a section possui border.
+        */
+
+
+        /*=================================================
+        =            EXEMPLO DE HERANÇA                   =
+        =================================================*/
+
+        .heranca {
+            color: blue;
+        }
+
+        /*
+            Todo texto dentro da classe heranca ficará azul.
+        */
+
+
+        /*=================================================
+        =            FORÇANDO HERANÇA                     =
+        =================================================*/
+
+        .inherit {
+            color: inherit;
+        }
+
+        /*
+            inherit significa:
+
+            "Herde exatamente o valor do pai."
+
+            Muito útil quando algum elemento possui
+            uma regra diferente mas queremos que siga
+            o estilo do elemento pai.
+        */
+
+
+        /*=================================================
+        =          ESPECIFICIDADE                         =
+        ===================================================
+
+        Quando várias regras tentam estilizar
+        o mesmo elemento, o navegador precisa
+        decidir qual utilizar.
+
+        Ordem de prioridade:
+
+        !important
+        Inline
+        ID
+        Classe
+        Elemento
+
+        =================================================*/
+
+
+        /* Elemento = 1 */
+
+        p {
+            color: green;
+        }
+
+
+        /* Classe = 10 */
+
+        .texto {
+            color: orange;
+        }
+
+
+        /* ID = 100 */
+
+        #importante {
+            color: red;
+        }
+
+        /*
+            Mesmo que o elemento seja um <p>
+            e possua uma classe,
+            o ID vencerá.
+        */
+
+
+        /*=================================================
+        =        SOMA DA ESPECIFICIDADE                   =
+        ===================================================
+
+        p               = 1
+
+        .texto          = 10
+
+        #titulo         =100
+
+        p.texto         =11
+
+        #titulo.texto   =110
+
+        =================================================*/
+
+        p.texto {
+            font-weight: bold;
+        }
+
+
+        /*=================================================
+        =        EMPATE DE ESPECIFICIDADE                 =
+        ===================================================
+
+        Se duas regras possuem exatamente
+        a mesma especificidade,
+        vence a última declarada.
+
+        =================================================*/
+
+        .empate {
+            background: lightblue;
+        }
+
+        .empate {
+            background: gold;
+        }
+
+
+        /*=================================================
+        =             !IMPORTANT                          =
+        ===================================================
+
+        !important ignora praticamente
+        toda a regra de especificidade.
+
+        Utilize apenas quando realmente
+        for necessário.
+
+        =================================================*/
+
+        .importante {
+            color: purple !important;
+        }
+
+
+        /*=================================================
+        =             ESTILOS VISUAIS                     =
+        =================================================*/
+
+        .caixa {
+            border: 1px solid gray;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #1d4ed8;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Herança e Especificidade no CSS</h1>
+
+    <section class="caixa">
+
+        <h2>1 - Herança</h2>
+
+        <div class="heranca">
+
+            <span>
+                Este span herdou a cor azul da div pai.
+            </span>
+
+            <br>
+
+            <span>
+                Este span também herdou a cor azul da div pai.
+            </span>
+
+        </div>
+
+    </section>
+
+    <section class="caixa">
+
+        <h2>2 - inherit</h2>
+
+        <div style="color: rgb(220, 20, 123);">
+
+            <p class="inherit">
+                Este texto utilizou
+                <strong>color: inherit</strong>
+                e herdou a cor do elemento pai.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="caixa">
+
+        <h2>3 - Especificidade</h2>
+
+        <p>
+            Apenas o seletor de elemento.
+        </p>
+
+        <p class="texto">
+            A classe vence o elemento.
+        </p>
+
+        <p class="texto" id="importante">
+            O ID vence a classe e o elemento.
+        </p>
+
+    </section>
+
+    <section class="caixa">
+
+        <h2>4 - Soma da Especificidade</h2>
+
+        <p class="texto">
+            Esta tag possui Elemento + Classe.
+            Resultado da especificidade: 11.
+        </p>
+
+    </section>
+
+    <section class="caixa">
+
+        <h2>5 - Empate</h2>
+
+        <div class="empate">
+            Quando há empate, vence
+            a última regra escrita.
+        </div>
+
+    </section>
+
+    <section class="caixa">
+
+        <h2>6 - !important</h2>
+
+        <p class="importante" id="importante">
+            Mesmo existindo um ID,
+            o !important prevalece.
+        </p>
+
+    </section>
+
+    <section class="caixa">
+
+        <h2>Resumo da Hierarquia</h2>
+
+        <pre>
+            !important
+            Inline
+            ID
+            Classe
+            Elemento
+            Herança
+        </pre>
+
+    </section>
+
+</body>
+
+</html>
