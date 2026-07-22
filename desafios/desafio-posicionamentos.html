@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamentos</title>
+
+    <style>
+       body {
+            background-color: lightskyblue;
+            margin: 0;
+            padding: 0;
+        }
+
+        #principal {
+            width: min(1200px, 94vw);
+            min-height: calc(100vh - 2em);
+            background-color: white;
+            margin: 1em auto;
+            padding: 1.2em;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        #menu {
+            background-color: lightblue;
+            padding: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color:white;
+            padding: 0.5em;
+        }
+
+        a:hover {
+            background-color: white;
+            color: #0497f3
+        }
+
+        .novo {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .chat{
+            background-color: violet;
+            width: 150px;
+            height: 200px;
+            padding: 0.5em;
+            position: fixed;
+            bottom: 1em;
+            left: 1em;
+            z-index: 10;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div id="principal">
+
+        <img class="novo" src="../img/novo.png" alt="logo" width="100px"> 
+
+        <div id="menu">
+             <img src="../img/logo-magalu.png" alt="logo" width="100px">
+            <a href="">home</a>
+            <a href="">sobre</a>
+            <a href="">produtos</a>
+            <a href="">pedidos</a>
+            <a href="">contato</a>
+        </div>
+       
+        <h1>Posicionamentos</h1>
+
+        <p>
+            lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Quisquam, quod.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod.
+        </p>
+
+        <h1>Posicionamentos</h1>
+
+        <p>
+            lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Quisquam, quod.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod.
+        </p>
+
+        <h1>Posicionamentos</h1>
+
+        <p>
+            lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Quisquam, quod.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod.
+        </p>
+
+         <h1>Posicionamentos</h1>
+
+        <p>
+            lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Quisquam, quod.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod.
+        </p>
+
+    </div>
+
+    <div class="chat">
+        <h1>Chat</h1>
+        <textarea name="chat" id=""  rows="5" cols="15" ></textarea>
+        <button>Enviar chat</button>
+    </div>
+    
+    
+</body>
+</html>

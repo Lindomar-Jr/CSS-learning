@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamentos em CSS</title>
+
+    <style>
+
+        /*====================================================
+            CONFIGURAÇÕES GERAIS
+        ====================================================*/
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        section {
+            width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        /*====================================================
+            ESTILO DAS CAIXAS
+        ====================================================*/
+
+        .caixa {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .azul {
+            background: steelblue;
+        }
+
+        .verde {
+            background: seagreen;
+        }
+
+        .vermelho {
+            background: crimson;
+        }
+
+        .laranja {
+            background: darkorange;
+        }
+
+        /*====================================================
+            POSITION: STATIC
+        ====================================================*/
+
+        /*
+            Valor padrão de TODOS os elementos HTML.
+
+            • Permanece no fluxo normal da página.
+            • Ignora:
+                top
+                right
+                bottom
+                left
+
+            Utilização:
+            Quando nenhum posicionamento especial é necessário.
+        */
+
+        .static {
+            position: static;
+        }
+
+        /*====================================================
+            POSITION: RELATIVE
+        ====================================================*/
+
+        /*
+            O elemento continua ocupando seu espaço original,
+            porém pode ser deslocado utilizando:
+
+                top
+                left
+                right
+                bottom
+
+            IMPORTANTE:
+
+            O espaço original continua reservado.
+
+            Também é muito utilizado como referência
+            para elementos com position: absolute.
+        */
+
+        .relative {
+            position: relative;
+
+            top: 30px;
+            left: 50px;
+        }
+
+        /*====================================================
+            CONTAINER DO ABSOLUTE
+        ====================================================*/
+
+        /*
+            Este elemento possui position: relative.
+
+            Assim, qualquer elemento com
+            position: absolute dentro dele
+            será posicionado em relação a esta caixa.
+        */
+
+        .container {
+            position: relative;
+
+            width: 500px;
+            height: 250px;
+
+            border: 3px dashed #666;
+            background: #fafafa;
+        }
+
+        /*====================================================
+            POSITION: ABSOLUTE
+        ====================================================*/
+
+        /*
+            Remove o elemento do fluxo da página.
+
+            Ele procura o primeiro elemento pai
+            que possua:
+
+                relative
+                absolute
+                fixed
+                sticky
+
+            Caso não encontre,
+            será posicionado em relação ao BODY.
+
+            Muito utilizado para:
+
+            ✔ Ícones
+            ✔ Badges
+            ✔ Labels
+            ✔ Botões sobre imagens
+            ✔ Cards
+        */
+
+        .absolute {
+            position: absolute;
+
+            top: 90px;
+            right: 180px;
+        }
+
+        /*====================================================
+            POSITION: FIXED
+        ====================================================*/
+
+        /*
+            Remove o elemento do fluxo.
+
+            Fica preso na tela,
+            independente da rolagem.
+
+            Muito utilizado para:
+
+            ✔ Botão WhatsApp
+            ✔ Voltar ao topo
+            ✔ Chat
+            ✔ Menu flutuante
+        */
+
+        .fixed {
+            position: fixed;
+
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /*====================================================
+            POSITION: STICKY
+        ====================================================*/
+
+        /*
+            Mistura Relative + Fixed.
+
+            Enquanto não alcança o valor de top,
+            comporta-se como Relative.
+
+            Após atingir esse ponto,
+            fica "grudado" na tela.
+
+            Muito utilizado para:
+
+            ✔ Cabeçalhos
+            ✔ Menus
+            ✔ Barra de navegação
+        */
+
+        .sticky {
+            position: sticky;
+
+            top: 0;
+
+            background: #2c3e50;
+            color: white;
+
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        /*====================================================
+            ÁREA PARA GERAR ROLAGEM
+        ====================================================*/
+
+        .rolagem {
+            height: 900px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Posicionamentos em CSS</h1>
+
+    <section>
+
+        <h2>1. Position: Static</h2>
+
+        <p>
+            O posicionamento padrão dos elementos HTML.
+            As propriedades <strong>top</strong>,
+            <strong>left</strong>,
+            <strong>right</strong> e
+            <strong>bottom</strong>
+            não produzem efeito.
+        </p>
+
+        <div class="caixa azul static">
+
+            Static
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>2. Position: Relative</h2>
+
+        <p>
+            O elemento continua ocupando seu espaço,
+            porém foi deslocado usando
+            <strong>top</strong> e
+            <strong>left</strong>.
+        </p>
+
+        <div class="caixa verde relative">
+
+            Relative
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>3. Position: Absolute</h2>
+
+        <p>
+            A caixa azul foi posicionada em relação
+            ao contêiner tracejado,
+            que possui
+            <strong>position: relative</strong>.
+        </p>
+
+        <div class="container">
+
+            <div class="caixa azul absolute">
+
+                Absolute
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>4. Position: Sticky</h2>
+
+        <p>
+            Role a página para observar o comportamento
+            do menu abaixo.
+        </p>
+
+        <div class="sticky">
+
+            Menu Sticky
+
+        </div>
+
+        <div class="rolagem"></div>
+
+    </section>
+
+    <!--
+        Mesmo estando no final do HTML,
+        esta caixa ficará presa
+        no canto inferior direito da tela.
+    -->
+
+    <div class="caixa laranja fixed">
+
+        Fixed
+
+    </div>
+
+</body>
+
+</html>
