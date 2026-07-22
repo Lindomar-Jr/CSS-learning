@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+
+    <style>
+
+        /*=========================================================
+            EXEMPLO DE SOBREPOSIÇÃO COM Z-INDEX
+
+            O z-index controla qual elemento ficará na frente
+            quando dois ou mais elementos ocupam a mesma área.
+
+            Quanto MAIOR o valor do z-index,
+            mais à frente o elemento será exibido.
+
+            IMPORTANTE:
+            O z-index só funciona em elementos posicionados
+            (position: relative, absolute, fixed ou sticky).
+        =========================================================*/
+
+
+        /*=========================================================
+            CAIXA 1
+        =========================================================*/
+
+        .caixa1 {
+
+            width: 200px;
+            height: 200px;
+
+            background-color: red;
+
+            border: solid 1px rgb(21, 192, 152);
+
+            /*
+                Remove o elemento do fluxo normal da página.
+
+                Agora sua posição será definida por:
+                top, left, right e bottom.
+            */
+            position: absolute;
+
+            /* Distância em relação ao topo da página */
+            top: 10px;
+
+            /* Distância da lateral esquerda */
+            left: 20px;
+
+            /*
+                Menor prioridade de empilhamento.
+
+                Como possui z-index:1,
+                ficará atrás das caixas que possuem
+                valores maiores.
+            */
+            z-index: 1;
+        }
+
+
+
+        /*=========================================================
+            CAIXA 2
+        =========================================================*/
+
+        .caixa2 {
+
+            width: 200px;
+            height: 200px;
+
+            background-color: blue;
+
+            border: solid 1px rgb(168, 26, 95);
+
+            position: absolute;
+
+            top: 100px;
+            left: 100px;
+
+            /*
+                Esta caixa ficará acima da Caixa 1,
+                pois seu z-index é maior.
+            */
+            z-index: 2;
+        }
+
+
+
+        /*=========================================================
+            CAIXA 3
+        =========================================================*/
+
+        .caixa3 {
+
+            width: 200px;
+            height: 200px;
+
+            background-color: green;
+
+            border: solid 1px rgba(111, 138, 178, 0.103);
+
+            position: absolute;
+
+            top: 200px;
+            left: 200px;
+
+            /*
+                Maior prioridade de empilhamento.
+
+                Como possui z-index:3,
+                será exibida acima das demais
+                quando houver sobreposição.
+            */
+            z-index: 3;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!--
+        A ordem do HTML nem sempre determina
+        quem ficará na frente.
+
+        Neste exemplo, quem controla a sobreposição
+        é o z-index.
+    -->
+
+    <div class="caixa1">
+        Caixa 1
+    </div>
+
+    <div class="caixa2">
+        Caixa 2
+    </div>
+
+    <div class="caixa3">
+        Caixa 3
+    </div>
+
+</body>
+</html>

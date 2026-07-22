@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobreposição</title>
+
+    <style>
+
+        .caixa {
+            background: purple;
+            position: relative;
+            width: 100%;
+        }
+
+        .destaque {
+            background-color: orange;
+            color: white;
+            position: absolute;
+            bottom: 2.5em;
+            left: 2em;
+            padding: 10px 16px;
+            border-radius: 30px;
+        }
+
+        .promocao {
+            border: 2px dotted purple;
+            background: white;
+            color: purple;
+            width: 300px;
+            position: absolute;
+            bottom: -1.8em;
+            padding: 1em;
+            left: 10%;
+            right: 10%;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+ 
+    <h1> Exercício Sobreposição</h1>
+
+    <div class="caixa">
+
+        <img src="../img/banner.png" alt="Banner" width="700">
+
+        <div class="destaque">
+            Tempo Limitado
+        </div>
+
+        <div class="promocao">
+            Quero a promocao
+        </div>
+
+    </div>
+    
+</body>
+</html>
