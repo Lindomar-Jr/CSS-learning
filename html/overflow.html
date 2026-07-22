@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow e dimensões de caixa</title>
+
+    <style>
+
+
+        .caixa {
+         /*width: 600px; - Define a largura da caixa
+            height: 300px; - Define a altura da caixa
+            min-width: 300px;  - Define a largura mínima da caixa 
+            max-width: 600px; - Define a largura máxima da caixa 
+            min-height: 400px; - Define a altura mínima da caixa 
+            max-height: 300px; - Define a altura máxima da caixa */ 
+            width: 600px;
+            height: 300px;
+            border: 1px solid red;
+            background-color: lightblue;
+
+          /*overflow: visible; - O conteúdo que ultrapassar a caixa será visível
+            overflow: hidden; - O conteúdo que ultrapassar a caixa será ocultado
+            scroll - O conteúdo que ultrapassar a caixa será ocultado, mas será possível rolar para ver o conteúdo
+            auto - O conteúdo que ultrapassar a caixa será ocultado, mas será possível rolar
+            overflow-x: ; - Define o comportamento do overflow na horizontal
+            overflow-y: ; - Define o comportamento do overflow na vertical
+            */
+            
+            /*overflow: scroll;*/
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="caixa">
+
+       <P>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+        </P> 
+
+       <P>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+        </P> 
+
+       <P>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+        </P> 
+
+       <P>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+        </P> 
+
+    </div>
+    
+</body>
+</html>
