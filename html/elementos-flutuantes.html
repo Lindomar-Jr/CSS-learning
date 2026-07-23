@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos Flutuantes (Float)</title>
+
+    <style>
+
+        /*
+        ======================================================
+            RESET BÁSICO
+        ======================================================
+
+        Remove margens padrão do navegador.
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            padding: 30px;
+            line-height: 1.6;
+
+        }
+
+        h1 {
+
+            margin-bottom: 20px;
+
+        }
+
+        h2 {
+
+            margin: 40px 0 15px;
+
+        }
+
+        p {
+
+            margin-bottom: 15px;
+
+        }
+
+        /*
+        ======================================================
+            ESTILO PADRÃO DAS CAIXAS
+        ======================================================
+
+        Apenas para facilitar a visualização dos exemplos.
+        */
+
+        .caixa {
+
+            width: 150px;
+            height: 150px;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 150px;
+            margin: 10px;
+
+        }
+
+        .azul {
+
+            background: steelblue;
+
+        }
+
+        .verde {
+
+            background: seagreen;
+
+        }
+
+        .vermelha {
+
+            background: crimson;
+
+        }
+
+        /*
+        ======================================================
+            FLOAT LEFT
+        ======================================================
+
+        Faz o elemento "flutuar" para a esquerda.
+
+        Os próximos elementos tentarão ocupar
+        o espaço disponível ao lado dele.
+
+        Muito utilizado antigamente para criar
+        colunas em layouts.
+        */
+
+        .float-left {
+
+            float: left;
+
+        }
+
+        /*
+        ======================================================
+            FLOAT RIGHT
+        ======================================================
+
+        Faz o elemento flutuar para a direita.
+
+        Os elementos seguintes irão ocupar
+        o espaço restante à esquerda.
+        */
+
+        .float-right {
+
+            float: right;
+
+        }
+
+        /*
+        ======================================================
+            FLOAT NONE
+        ======================================================
+
+        Valor padrão.
+
+        O elemento NÃO flutua.
+
+        Pode ser usado para remover um float
+        aplicado anteriormente.
+        */
+
+        .float-none {
+
+            float: none;
+
+        }
+
+        /*
+        ======================================================
+            CLEAR LEFT
+        ======================================================
+
+        O elemento será exibido somente
+        depois de TODOS os elementos
+        flutuando à esquerda.
+        */
+
+        .clear-left {
+
+            clear: left;
+
+        }
+
+        /*
+        ======================================================
+            CLEAR RIGHT
+        ======================================================
+
+        Ignora todos os elementos
+        flutuando à direita.
+        */
+
+        .clear-right {
+
+            clear: right;
+
+        }
+
+        /*
+        ======================================================
+            CLEAR BOTH
+        ======================================================
+
+        Ignora TODOS os elementos
+        flutuando à esquerda e à direita.
+
+        É o valor mais utilizado.
+        */
+
+        .clear-both {
+
+            clear: both;
+
+        }
+
+        /*
+        ======================================================
+            CONTAINER DOS EXEMPLOS
+        ======================================================
+        */
+
+        .container {
+
+            background: white;
+            border: 2px solid #999;
+            padding: 15px;
+            margin-bottom: 40px;
+
+        }
+
+        /*
+        ======================================================
+            CLEARFIX
+        ======================================================
+
+        Quando todos os elementos internos
+        possuem float, o elemento pai perde
+        sua altura.
+
+        O clearfix cria um elemento invisível
+        após o conteúdo para limpar os floats.
+
+        Hoje ainda é muito utilizado quando
+        se trabalha com float.
+        */
+
+        .clearfix::after {
+
+            content: "";
+            display: block;
+            clear: both;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Elementos Flutuantes (Float)</h1>
+
+    <p>
+        Antes da criação do Flexbox e do CSS Grid, o <strong>float</strong>
+        era a principal técnica utilizada para construir layouts com colunas.
+        Atualmente ele ainda é importante, principalmente para compreender
+        códigos antigos e posicionar imagens ao lado de textos.
+    </p>
+
+    <!-- ===================================================== -->
+    <!-- FLOAT LEFT -->
+    <!-- ===================================================== -->
+
+    <h2>1. Float Left</h2>
+
+    <div class="container clearfix">
+
+        <div class="caixa azul float-left">
+            Left
+        </div>
+
+        <p>
+
+            A caixa azul está utilizando
+            <strong>float: left</strong>.
+
+            Observe que o texto passa a ocupar
+            automaticamente o espaço disponível
+            ao lado da caixa.
+
+        </p>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- FLOAT RIGHT -->
+    <!-- ===================================================== -->
+
+    <h2>2. Float Right</h2>
+
+    <div class="container clearfix">
+
+        <div class="caixa verde float-right">
+            Right
+        </div>
+
+        <p>
+
+            Agora o elemento está utilizando
+            <strong>float: right</strong>.
+
+            Todo o conteúdo tenta preencher
+            o espaço livre à esquerda.
+
+        </p>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- FLOAT NONE -->
+    <!-- ===================================================== -->
+
+    <h2>3. Float None</h2>
+
+    <div class="container">
+
+        <div class="caixa vermelha float-none">
+
+            None
+
+        </div>
+
+        <p>
+
+            O valor <strong>none</strong> cancela
+            qualquer flutuação.
+
+            O elemento volta ao fluxo normal
+            da página.
+
+        </p>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- CLEAR -->
+    <!-- ===================================================== -->
+
+    <h2>4. Utilizando Clear</h2>
+
+    <div class="container clearfix">
+
+        <div class="caixa azul float-left">
+
+            Caixa 1
+
+        </div>
+
+        <div class="caixa verde float-left">
+
+            Caixa 2
+
+        </div>
+
+        <p class="clear-both">
+
+            Este texto utiliza
+            <strong>clear: both</strong>.
+
+            Por isso ele aparece somente
+            abaixo das duas caixas.
+
+        </p>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- EXEMPLO PRÁTICO -->
+    <!-- ===================================================== -->
+
+    <h2>5. Exemplo Prático</h2>
+
+    <div class="container clearfix">
+
+        <div class="caixa vermelha float-left">
+
+            Foto
+
+        </div>
+
+        <p>
+
+            Um dos usos mais comuns do float
+            é posicionar uma imagem ao lado
+            de um texto, permitindo que o
+            conteúdo envolva a imagem de forma
+            semelhante ao que ocorre em jornais,
+            revistas e blogs.
+
+        </p>
+
+        <p>
+
+            Durante muitos anos essa foi uma
+            das aplicações mais frequentes do
+            <strong>float</strong>.
+
+        </p>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- OBSERVAÇÃO -->
+    <!-- ===================================================== -->
+
+    <h2>6. Observação Importante</h2>
+
+    <p>
+
+        Atualmente, para criar layouts completos,
+        recomenda-se utilizar
+        <strong>Flexbox</strong> ou
+        <strong>CSS Grid</strong>.
+
+        O <strong>float</strong> continua existindo,
+        porém sua finalidade principal hoje é
+        posicionar pequenos elementos, como imagens
+        ao lado de textos.
+
+    </p>
+
+    <hr>
+
+    <h2>Resumo</h2>
+
+    <ul>
+
+        <li><strong>float: left;</strong> → Flutua para a esquerda.</li>
+
+        <li><strong>float: right;</strong> → Flutua para a direita.</li>
+
+        <li><strong>float: none;</strong> → Remove a flutuação.</li>
+
+        <li><strong>clear: left;</strong> → Limpa elementos à esquerda.</li>
+
+        <li><strong>clear: right;</strong> → Limpa elementos à direita.</li>
+
+        <li><strong>clear: both;</strong> → Limpa ambos os lados.</li>
+
+        <li><strong>.clearfix</strong> → Corrige o colapso do elemento pai quando todos os filhos utilizam <strong>float</strong>.</li>
+
+    </ul>
+
+</body>
+
+</html>
