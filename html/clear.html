@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedade Clear</title>
+
+    <style>
+
+        /*
+        ======================================================
+        CLEAR
+        ======================================================
+
+        A propriedade "clear" controla o comportamento de um
+        elemento em relação aos elementos que utilizam float.
+
+        Quando um elemento possui float, os elementos abaixo
+        podem ficar ao seu lado.
+
+        O clear "limpa" esse comportamento, obrigando o elemento
+        seguinte a aparecer abaixo dos elementos flutuantes.
+
+        Valores possíveis:
+
+        clear: left;   -> Limpa apenas floats à esquerda.
+        clear: right;  -> Limpa apenas floats à direita.
+        clear: both;   -> Limpa floats dos dois lados.
+        clear: none;   -> Valor padrão.
+        */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            margin: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #0a58ca;
+        }
+
+        /*======================================================
+            EXEMPLO 1 - Float sem Clear
+        ======================================================*/
+
+        .caixa {
+            width: 150px;
+            height: 150px;
+            color: white;
+            text-align: center;
+            line-height: 150px;
+            font-weight: bold;
+        }
+
+        .vermelha {
+            background: crimson;
+            float: left;
+        }
+
+        .azul {
+            background: royalblue;
+            float: left;
+            margin-left: 10px;
+        }
+
+        /*
+        Sem clear, o parágrafo tentará ocupar
+        o espaço restante ao lado das caixas.
+        */
+
+        .texto-sem-clear {
+            background: #ffeeba;
+            padding: 10px;
+        }
+
+        /*======================================================
+            EXEMPLO 2 - Utilizando clear: both
+        ======================================================*/
+
+        /*
+        O clear: both faz o elemento iniciar
+        abaixo de TODOS os elementos flutuantes.
+        */
+
+        .texto-com-clear {
+            clear: both;
+            background: #c3f5c3;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /*======================================================
+            EXEMPLO 3 - Float à direita
+        ======================================================*/
+
+        .direita {
+            float: right;
+            background: darkorange;
+        }
+
+        /*
+        clear:right ignora apenas elementos
+        flutuando à direita.
+        */
+
+        .clear-right {
+            clear: right;
+            background: #d8f3ff;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /*======================================================
+            EXEMPLO 4 - Float à esquerda
+        ======================================================*/
+
+        .esquerda {
+            float: left;
+            background: seagreen;
+        }
+
+        /*
+        clear:left limpa somente floats
+        posicionados à esquerda.
+        */
+
+        .clear-left {
+            clear: left;
+            background: #fff5c4;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /*======================================================
+            EXEMPLO 5 - Limpando o container
+        ======================================================*/
+
+        /*
+        Problema clássico:
+
+        Quando TODOS os filhos possuem float,
+        o elemento pai perde sua altura.
+
+        Uma solução é utilizar um elemento
+        com clear: both no final.
+        */
+
+        .container {
+            border: 3px solid #333;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .mini-caixa {
+            float: left;
+            width: 120px;
+            height: 120px;
+            background: steelblue;
+            color: white;
+            text-align: center;
+            line-height: 120px;
+            margin-right: 10px;
+        }
+
+        /*
+        Este elemento "empurra" o final
+        do container para baixo dos floats.
+        */
+
+        .clear {
+            clear: both;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Estudo da propriedade Clear</h1>
+
+    <!-- ============================================== -->
+    <!-- Exemplo 1 -->
+    <!-- ============================================== -->
+
+    <section>
+
+        <h2>1. Sem utilizar Clear</h2>
+
+        <div class="caixa vermelha">
+            Float Left
+        </div>
+
+        <div class="caixa azul">
+            Float Left
+        </div>
+
+        <p class="texto-sem-clear">
+
+            Observe que este texto tenta ocupar o espaço ao lado
+            das caixas porque elas estão utilizando float.
+
+            Isso acontece porque ainda não utilizamos a
+            propriedade clear.
+
+        </p>
+
+    </section>
+
+    <!-- ============================================== -->
+    <!-- Exemplo 2 -->
+    <!-- ============================================== -->
+
+    <section>
+
+        <h2>2. Utilizando clear: both</h2>
+
+        <div class="caixa vermelha">
+            Float Left
+        </div>
+
+        <div class="caixa azul">
+            Float Left
+        </div>
+
+        <p class="texto-com-clear">
+
+            Agora este parágrafo começa abaixo das duas caixas.
+
+            O clear: both impede que ele fique ao lado
+            dos elementos flutuantes.
+
+        </p>
+
+    </section>
+
+    <!-- ============================================== -->
+    <!-- Exemplo 3 -->
+    <!-- ============================================== -->
+
+    <section>
+
+        <h2>3. clear: right</h2>
+
+        <div class="caixa direita">
+
+            Float Right
+
+        </div>
+
+        <p class="clear-right">
+
+            Como utilizamos clear: right, este texto inicia
+            abaixo do elemento flutuando à direita.
+
+        </p>
+
+    </section>
+
+    <!-- ============================================== -->
+    <!-- Exemplo 4 -->
+    <!-- ============================================== -->
+
+    <section>
+
+        <h2>4. clear: left</h2>
+
+        <div class="caixa esquerda">
+
+            Float Left
+
+        </div>
+
+        <p class="clear-left">
+
+            Este texto somente ignora elementos
+            flutuando à esquerda.
+
+        </p>
+
+    </section>
+
+    <!-- ============================================== -->
+    <!-- Exemplo 5 -->
+    <!-- ============================================== -->
+
+    <section>
+
+        <h2>5. Limpando o Container</h2>
+
+        <div class="container">
+
+            <div class="mini-caixa">
+                Box 1
+            </div>
+
+            <div class="mini-caixa">
+                Box 2
+            </div>
+
+            <div class="mini-caixa">
+                Box 3
+            </div>
+
+            <!--
+            Este elemento possui clear:both.
+
+            Sua única função é informar ao
+            container que os elementos float
+            terminaram aqui.
+            -->
+
+            <div class="clear"></div>
+
+        </div>
+
+        <p>
+
+            Sem este elemento de limpeza, a borda do container
+            praticamente desapareceria, pois todos os filhos
+            estão utilizando float.
+
+        </p>
+
+    </section>
+
+</body>
+
+</html>
