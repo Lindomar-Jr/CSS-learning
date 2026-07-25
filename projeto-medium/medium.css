@@ -1,0 +1,149 @@
+/*Estruturas/layouts*/
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+#cabecalho {
+    background-color: #c5e3fe;
+    border-bottom: 1px solid black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 1.4rem 0;
+    width: min(1145px, calc(100% - 2rem));
+}
+
+ul#menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 475px;
+    float: right;
+}
+
+ul#menu li a {
+    float: left;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: black;
+    text-decoration: none;
+    
+}
+
+ul#menu li a:hover {
+    color: #4c799f;
+}
+
+ul#menu li.destaque a {
+    background-color: black;
+    color: white;
+    border-radius: 1.2em;
+}
+
+ul#menu li.destaque a:hover {
+    color: #c5e3fe;
+}
+
+
+
+/*area de destaque*/
+
+#destaque {
+    background-color: #c5e3fe;
+    border-bottom: 1px solid black;
+    margin-top: 4.7rem;
+}
+
+#area-destaque {
+    width: 55%;
+}
+
+#destaque button {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #4c799f;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1.5em;
+}
+
+#destaque button:hover {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 1.5em;
+}
+
+.fundo-destaque {
+    background: url(../projeto-medium/img/fundo-topo.png) no-repeat right bottom;
+    background-size: 22rem;
+}
+
+#conteudo {
+    background-color: #f7fbff;
+    padding: 2.5rem 0 3rem;
+}
+
+#conteudo .container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.bloco {
+    flex: 1;
+    background-color: #c5e3fe;
+    border: 1px solid #d8e3eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 20px 20px 20px rgba(7, 44, 130, 0.463);
+}
+
+.bloco h2 {
+    margin: 0 0 0.7rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.bloco p {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+    color: white;
+}
+
+.bloco a {
+    color: #4c799f;
+    text-decoration: none;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5em;
+}
+
+.bloco a:hover {
+    color: white;
+    background-color: black;
+}
+
+/*tipografia*/
+
+h1 {
+    font-size: 4rem;
+    font-weight: 100;
+    margin: 0;
+    letter-spacing: -0.1rem;
+}
