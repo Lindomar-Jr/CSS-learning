@@ -1,0 +1,222 @@
+
+        /*
+        ======================================================
+            RESET BÁSICO
+        ======================================================
+
+        Remove margens padrão do navegador.
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            padding: 30px;
+            line-height: 1.6;
+
+        }
+
+        h1 {
+
+            margin-bottom: 20px;
+
+        }
+
+        h2 {
+
+            margin: 40px 0 15px;
+
+        }
+
+        p {
+
+            margin-bottom: 15px;
+
+        }
+
+        /*
+        ======================================================
+            ESTILO PADRÃO DAS CAIXAS
+        ======================================================
+
+        Apenas para facilitar a visualização dos exemplos.
+        */
+
+        .caixa {
+
+            width: 150px;
+            height: 150px;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 150px;
+            margin: 10px;
+
+        }
+
+        .azul {
+
+            background: steelblue;
+
+        }
+
+        .verde {
+
+            background: seagreen;
+
+        }
+
+        .vermelha {
+
+            background: crimson;
+
+        }
+
+        /*
+        ======================================================
+            FLOAT LEFT
+        ======================================================
+
+        Faz o elemento "flutuar" para a esquerda.
+
+        Os próximos elementos tentarão ocupar
+        o espaço disponível ao lado dele.
+
+        Muito utilizado antigamente para criar
+        colunas em layouts.
+        */
+
+        .float-left {
+
+            float: left;
+
+        }
+
+        /*
+        ======================================================
+            FLOAT RIGHT
+        ======================================================
+
+        Faz o elemento flutuar para a direita.
+
+        Os elementos seguintes irão ocupar
+        o espaço restante à esquerda.
+        */
+
+        .float-right {
+
+            float: right;
+
+        }
+
+        /*
+        ======================================================
+            FLOAT NONE
+        ======================================================
+
+        Valor padrão.
+
+        O elemento NÃO flutua.
+
+        Pode ser usado para remover um float
+        aplicado anteriormente.
+        */
+
+        .float-none {
+
+            float: none;
+
+        }
+
+        /*
+        ======================================================
+            CLEAR LEFT
+        ======================================================
+
+        O elemento será exibido somente
+        depois de TODOS os elementos
+        flutuando à esquerda.
+        */
+
+        .clear-left {
+
+            clear: left;
+
+        }
+
+        /*
+        ======================================================
+            CLEAR RIGHT
+        ======================================================
+
+        Ignora todos os elementos
+        flutuando à direita.
+        */
+
+        .clear-right {
+
+            clear: right;
+
+        }
+
+        /*
+        ======================================================
+            CLEAR BOTH
+        ======================================================
+
+        Ignora TODOS os elementos
+        flutuando à esquerda e à direita.
+
+        É o valor mais utilizado.
+        */
+
+        .clear-both {
+
+            clear: both;
+
+        }
+
+        /*
+        ======================================================
+            CONTAINER DOS EXEMPLOS
+        ======================================================
+        */
+
+        .container {
+
+            background: white;
+            border: 2px solid #999;
+            padding: 15px;
+            margin-bottom: 40px;
+
+        }
+
+        /*
+        ======================================================
+            CLEARFIX
+        ======================================================
+
+        Quando todos os elementos internos
+        possuem float, o elemento pai perde
+        sua altura.
+
+        O clearfix cria um elemento invisível
+        após o conteúdo para limpar os floats.
+
+        Hoje ainda é muito utilizado quando
+        se trabalha com float.
+        */
+
+        .clearfix::after {
+
+            content: "";
+            display: block;
+            clear: both;
+
+        }

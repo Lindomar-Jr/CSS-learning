@@ -1,0 +1,174 @@
+/*
+        ======================================================
+        CLEAR
+        ======================================================
+
+        A propriedade "clear" controla o comportamento de um
+        elemento em relação aos elementos que utilizam float.
+
+        Quando um elemento possui float, os elementos abaixo
+        podem ficar ao seu lado.
+
+        O clear "limpa" esse comportamento, obrigando o elemento
+        seguinte a aparecer abaixo dos elementos flutuantes.
+
+        Valores possíveis:
+
+        clear: left;   -> Limpa apenas floats à esquerda.
+        clear: right;  -> Limpa apenas floats à direita.
+        clear: both;   -> Limpa floats dos dois lados.
+        clear: none;   -> Valor padrão.
+        */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            margin: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #0a58ca;
+        }
+
+        /*======================================================
+            EXEMPLO 1 - Float sem Clear
+        ======================================================*/
+
+        .caixa {
+            width: 150px;
+            height: 150px;
+            color: white;
+            text-align: center;
+            line-height: 150px;
+            font-weight: bold;
+        }
+
+        .vermelha {
+            background: crimson;
+            float: left;
+        }
+
+        .azul {
+            background: royalblue;
+            float: left;
+            margin-left: 10px;
+        }
+
+        /*
+        Sem clear, o parágrafo tentará ocupar
+        o espaço restante ao lado das caixas.
+        */
+
+        .texto-sem-clear {
+            background: #ffeeba;
+            padding: 10px;
+        }
+
+        /*======================================================
+            EXEMPLO 2 - Utilizando clear: both
+        ======================================================*/
+
+        /*
+        O clear: both faz o elemento iniciar
+        abaixo de TODOS os elementos flutuantes.
+        */
+
+        .texto-com-clear {
+            clear: both;
+            background: #c3f5c3;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /*======================================================
+            EXEMPLO 3 - Float à direita
+        ======================================================*/
+
+        .direita {
+            float: right;
+            background: darkorange;
+        }
+
+        /*
+        clear:right ignora apenas elementos
+        flutuando à direita.
+        */
+
+        .clear-right {
+            clear: right;
+            background: #d8f3ff;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /*======================================================
+            EXEMPLO 4 - Float à esquerda
+        ======================================================*/
+
+        .esquerda {
+            float: left;
+            background: seagreen;
+        }
+
+        /*
+        clear:left limpa somente floats
+        posicionados à esquerda.
+        */
+
+        .clear-left {
+            clear: left;
+            background: #fff5c4;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /*======================================================
+            EXEMPLO 5 - Limpando o container
+        ======================================================*/
+
+        /*
+        Problema clássico:
+
+        Quando TODOS os filhos possuem float,
+        o elemento pai perde sua altura.
+
+        Uma solução é utilizar um elemento
+        com clear: both no final.
+        */
+
+        .container {
+            border: 3px solid #333;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .mini-caixa {
+            float: left;
+            width: 120px;
+            height: 120px;
+            background: steelblue;
+            color: white;
+            text-align: center;
+            line-height: 120px;
+            margin-right: 10px;
+        }
+
+        /*
+        Este elemento "empurra" o final
+        do container para baixo dos floats.
+        */
+
+        .clear {
+            clear: both;
+        }

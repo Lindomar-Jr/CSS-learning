@@ -1,0 +1,27 @@
+ /*
+            vw e vh são unidades de medida relativas ao tamanho da janela do navegador (viewport).
+
+            vw (Viewport Width) → largura da janela.
+            vh (Viewport Height) → altura da janela.
+        */
+        
+        .vw {
+            border: 1px solid black;
+            background: red;
+            padding: 8px;
+            width: 50vw;
+        }
+
+
+        .vh {
+            border: 1px solid black;
+            background: red;
+            padding: 8px;
+            width: 20vh;
+        }
+
+
+        #area {
+            border: 3px solid black;
+            width: 600px;
+        }
