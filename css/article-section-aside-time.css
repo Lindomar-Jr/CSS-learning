@@ -1,0 +1,117 @@
+
+		/* ==========================================================
+		   RESET BÁSICO
+
+		   Remove margens e espaçamentos padrões do navegador.
+		========================================================== */
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		/* ==========================================================
+		   BODY
+
+		   Define o estilo geral da página.
+		========================================================== */
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background: #f4f4f4;
+			line-height: 1.6;
+			padding: 30px;
+		}
+
+		/* ==========================================================
+		   ARTICLE
+
+		   A tag <article> representa um conteúdo independente.
+
+		   Seu conteúdo deve fazer sentido sozinho, mesmo que seja
+		   removido da página e publicado em outro lugar.
+
+		   Exemplos de uso:
+		   - Notícias
+		   - Posts de blog
+		   - Artigos
+		   - Comentários
+		   - Produtos
+		========================================================== */
+
+		article {
+			background: white;
+			padding: 20px;
+			border: 1px solid #ccc;
+			margin-bottom: 25px;
+			border-radius: 6px;
+		}
+
+		/* ==========================================================
+		   SECTION
+
+		   A tag <section> divide um conteúdo em partes relacionadas.
+
+		   Ela organiza assuntos diferentes dentro de um mesmo
+		   contexto.
+
+		   Exemplos:
+		   - Introdução
+		   - Desenvolvimento
+		   - Conclusão
+		   - Características
+		   - Especificações
+		========================================================== */
+
+		section {
+			background: #eef5ff;
+			padding: 15px;
+			margin-top: 15px;
+			border-left: 5px solid steelblue;
+		}
+
+		/* ==========================================================
+		   ASIDE
+
+		   A tag <aside> representa um conteúdo complementar.
+
+		   Seu conteúdo não faz parte da informação principal,
+		   mas possui relação com ela.
+
+		   Exemplos:
+		   - Curiosidades
+		   - Links relacionados
+		   - Publicidade
+		   - Dicas
+		   - Informações extras
+		========================================================== */
+
+		aside {
+			background: #fff8dc;
+			padding: 15px;
+			margin-top: 20px;
+			border-left: 5px solid goldenrod;
+		}
+
+		/* ==========================================================
+		   TIME
+
+		   A tag <time> representa datas ou horários.
+
+		   O atributo datetime contém a data em um formato que
+		   navegadores e mecanismos de busca conseguem interpretar.
+
+		   Formato comum:
+
+		   AAAA-MM-DD
+
+		   Exemplo:
+
+		   datetime="2026-07-26"
+		========================================================== */
+
+		time {
+			color: steelblue;
+			font-weight: bold;
+		}

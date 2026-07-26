@@ -1,0 +1,145 @@
+	/* ==========================================================
+		   RESET BÁSICO
+		   Remove margens e espaçamentos padrões do navegador.
+		========================================================== */
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		/* ==========================================================
+		   BODY
+
+		   O body representa todo o conteúdo visível da página.
+		   Aqui definimos fonte, cor de fundo e altura mínima.
+		========================================================== */
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background: #f4f4f4;
+			line-height: 1.6;
+		}
+
+		/* ==========================================================
+		   HEADER
+
+		   A tag <header> representa o cabeçalho da página ou
+		   de uma seção.
+
+		   Normalmente contém:
+		   - Logo
+		   - Nome do site
+		   - Banner
+		   - Menu de navegação
+		   - Campo de pesquisa
+
+		   Pode existir mais de um header na mesma página.
+		========================================================== */
+
+		header {
+			background: #1e3a5f;
+			color: white;
+			padding: 30px;
+			text-align: center;
+		}
+
+		header h1 {
+			margin-bottom: 10px;
+		}
+
+		/* ==========================================================
+		   NAV
+
+		   A tag <nav> representa uma área destinada à navegação.
+
+		   Normalmente contém:
+		   - Links do menu
+		   - Menu principal
+		   - Menu lateral
+		   - Navegação entre páginas
+
+		   Não é obrigatório que todos os links fiquem dentro
+		   de uma tag nav.
+
+		   Utilize apenas quando os links forem de navegação.
+		========================================================== */
+
+		nav {
+			background: #2d5b89;
+			padding: 15px;
+			text-align: center;
+		}
+
+		nav a {
+			color: white;
+			text-decoration: none;
+			margin: 0 15px;
+			font-weight: bold;
+		}
+
+		/* Efeito ao passar o mouse */
+
+		nav a:hover {
+			color: gold;
+		}
+
+		/* ==========================================================
+		   MAIN
+
+		   A tag <main> representa o conteúdo principal
+		   da página.
+
+		   Dentro dela normalmente encontramos:
+		   - Artigos
+		   - Seções
+		   - Conteúdo do site
+		   - Cards
+		   - Produtos
+		   - Notícias
+
+		   Deve existir apenas UM <main> por documento HTML.
+		========================================================== */
+
+		main {
+			width: 80%;
+			margin: 30px auto;
+			background: white;
+			padding: 25px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+		}
+
+		main h2 {
+			margin-bottom: 15px;
+			color: #1e3a5f;
+		}
+
+		main p {
+			margin-bottom: 15px;
+		}
+
+        
+		/* ==========================================================
+		   FOOTER
+
+		   A tag <footer> representa o rodapé da página.
+
+		   Geralmente possui:
+		   - Direitos autorais
+		   - Redes sociais
+		   - Contato
+		   - Links úteis
+		   - Informações legais
+
+		   Também pode existir em artigos ou seções.
+		========================================================== */
+
+		footer {
+			background: #1e3a5f;
+			color: white;
+			text-align: center;
+			padding: 20px;
+			margin-top: 40px;
+		}
