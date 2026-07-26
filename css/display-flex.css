@@ -1,0 +1,171 @@
+/*
+		====================================================================
+		DISPLAY FLEX
+		====================================================================
+
+		O Flexbox é um modelo de layout criado para facilitar o alinhamento
+		e a distribuição de elementos dentro de um container.
+
+		Ao aplicar:
+			display: flex;
+
+		o elemento pai passa a ser chamado de FLEX CONTAINER.
+
+		Todos os seus elementos filhos passam a ser FLEX ITEMS.
+
+		O Flexbox trabalha com dois eixos:
+
+		• Main Axis (Eixo Principal)
+		• Cross Axis (Eixo Secundário)
+
+		O sentido desses eixos depende da propriedade flex-direction.
+		*/
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background: #f4f4f4;
+			margin: 20px;
+		}
+
+		h1,
+		h2 {
+			color: #333;
+		}
+
+		.exemplo {
+			margin-bottom: 60px;
+		}
+
+		/*
+		Container base utilizado em todos os exemplos.
+		*/
+		.container {
+
+			display: flex;
+
+			width: 700px;
+			border: 3px solid #333;
+			background: white;
+			padding: 10px;
+			margin-top: 15px;
+
+		}
+
+		/*
+		Itens utilizados nos exemplos.
+		*/
+		.item {
+
+			width: 120px;
+			height: 80px;
+
+			background: steelblue;
+			color: white;
+
+			margin: 5px;
+
+			display: flex;
+			justify-content: center;
+            align-items: center;
+			font-weight: bold;
+
+		}
+
+		/*
+		=========================================================
+		FLEX-DIRECTION
+		=========================================================
+
+		Define a direção do eixo principal.
+
+		row
+		Os itens ficam lado a lado (padrão).
+
+		column
+		Os itens ficam um abaixo do outro.
+
+		row-reverse
+		Lado a lado, porém invertidos.
+
+		column-reverse
+		Em coluna, porém invertidos.
+		*/
+
+		.row {
+			flex-direction: row;
+		}
+
+		.column {
+			flex-direction: column;
+		}
+
+		.row-reverse {
+			flex-direction: row-reverse;
+		}
+
+		.column-reverse {
+			flex-direction: column-reverse;
+		}
+
+		/*
+		=========================================================
+		FLEX-WRAP
+		=========================================================
+
+		Controla se os itens podem quebrar linha quando não houver
+		espaço suficiente.
+
+		nowrap (padrão)
+		Todos permanecem na mesma linha.
+
+		wrap
+		Quando faltar espaço, os itens descem para outra linha.
+
+		wrap-reverse
+		Quebra as linhas, porém em ordem inversa.
+		*/
+
+		.nowrap {
+
+			flex-wrap: nowrap;
+
+		}
+
+		.wrap {
+
+			flex-wrap: wrap;
+
+		}
+
+		.wrap-reverse {
+
+			flex-wrap: wrap-reverse;
+
+		}
+
+		/*
+		=========================================================
+		FLEX-FLOW
+		=========================================================
+
+		É um atalho (shorthand) para:
+
+			flex-direction
+			flex-wrap
+
+		Sintaxe:
+
+			flex-flow: direção quebra;
+
+		Exemplos:
+
+			flex-flow: row wrap;
+			flex-flow: column wrap;
+			flex-flow: row nowrap;
+		*/
+
+		.flow {
+
+			flex-flow: row wrap;
+
+		}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Display Flex</title>
+
+    <link rel="stylesheet" href="../../css/display-flex.css">
+
+</head>
+
+<body>
+
+	<h1>Display Flex</h1>
+
+	<!-- ========================================================= -->
+	<!-- FLEX-DIRECTION -->
+	<!-- ========================================================= -->
+
+	<section class="exemplo">
+
+		<h2>flex-direction: row (Padrão)</h2>
+
+		<p>
+			Os elementos ficam organizados horizontalmente,
+			da esquerda para a direita.
+		</p>
+
+		<div class="container row">
+
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+
+		</div>
+
+	</section>
+
+	<section class="exemplo">
+
+		<h2>flex-direction: column</h2>
+
+		<p>
+			Os elementos passam a ser organizados verticalmente.
+		</p>
+
+		<div class="container column">
+
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+
+		</div>
+
+	</section>
+
+	<section class="exemplo">
+
+		<h2>flex-direction: row-reverse</h2>
+
+		<p>
+			Os elementos continuam em linha,
+			porém a ordem é invertida.
+		</p>
+
+		<div class="container row-reverse">
+
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+
+		</div>
+
+	</section>
+
+	<section class="exemplo">
+
+		<h2>flex-direction: column-reverse</h2>
+
+		<p>
+			Os elementos ficam em coluna,
+			mas em ordem inversa.
+		</p>
+
+		<div class="container column-reverse">
+
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+
+		</div>
+
+	</section>
+
+	<!-- ========================================================= -->
+	<!-- FLEX-WRAP -->
+	<!-- ========================================================= -->
+
+	<section class="exemplo">
+
+		<h2>flex-wrap: nowrap</h2>
+
+		<p>
+			Os itens permanecem na mesma linha.
+			Se faltar espaço, eles podem diminuir de tamanho.
+		</p>
+
+		<div class="container nowrap">
+
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+			<div class="item">5</div>
+			<div class="item">6</div>
+
+		</div>
+
+	</section>
+
+	<section class="exemplo">
+
+		<h2>flex-wrap: wrap</h2>
+
+		<p>
+			Quando não houver espaço suficiente,
+			os itens são movidos para uma nova linha.
+		</p>
+
+		<div class="container wrap">
+
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+			<div class="item">5</div>
+			<div class="item">6</div>
+			<div class="item">7</div>
+
+		</div>
+
+	</section>
+
+	<section class="exemplo">
+
+		<h2>flex-wrap: wrap-reverse</h2>
+
+		<p>
+			Quebra a linha normalmente,
+			porém as linhas aparecem em ordem inversa.
+		</p>
+
+		<div class="container wrap-reverse">
+
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+			<div class="item">5</div>
+			<div class="item">6</div>
+
+		</div>
+
+	</section>
+
+	<!-- ========================================================= -->
+	<!-- FLEX-FLOW -->
+	<!-- ========================================================= -->
+
+	<section class="exemplo">
+
+		<h2>flex-flow: row wrap</h2>
+
+		<p>
+			Combina flex-direction e flex-wrap em uma única propriedade.
+		</p>
+
+		<div class="container flow">
+
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+			<div class="item">5</div>
+			<div class="item">6</div>
+
+		</div>
+
+	</section>
+
+	<!--
+	========================================================
+
+	RESUMO
+
+	display: flex;
+		Transforma um elemento em um Flex Container.
+
+	flex-direction
+		Define a direção dos itens.
+
+			row
+			column
+			row-reverse
+			column-reverse
+
+	flex-wrap
+		Define se os itens quebram linha.
+
+			nowrap
+			wrap
+			wrap-reverse
+
+	flex-flow
+		Atalho para:
+
+			flex-direction + flex-wrap
+
+	Exemplo:
+
+		flex-flow: row wrap;
+
+	========================================================
+	-->
+
+</body>
+
+</html>
