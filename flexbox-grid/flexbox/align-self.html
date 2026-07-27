@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Align Self</title>
+
+    <link rel="stylesheet" href="../../css/align-self.css">
+
+</head>
+
+<body>
+
+    <h1>Align Self</h1>
+
+    <p>
+        O container utiliza <strong>align-items: center</strong>, portanto
+        todos os elementos ficam centralizados verticalmente.
+    </p>
+
+    <p>
+        Apenas o item vermelho possui
+        <strong>align-self: flex-start</strong>,
+        ficando alinhado ao topo.
+    </p>
+
+    <P>
+        Apenas o item verde possui
+        <strong>align-self: flex-end</strong>,
+        ficando alinhado a base.
+    </P>
+
+
+    <div class="container">
+
+        <div class="item">1</div>
+
+        <div class="item destaque">2</div>
+
+        <div class="item">3</div>
+
+        <div class="item">4</div>
+
+        <div class="item">5</div>
+
+        <div class="item">6</div>
+
+        <div class="item destaque1">7</div>
+
+    </div>
+
+
+    <!--
+    ============================================================
+    RESUMO
+
+    align-items
+        Controla TODOS os itens.
+
+    align-self
+        Controla apenas UM item.
+
+    Podemos imaginar da seguinte forma:
+
+    align-items:
+        "Todos os funcionários entram às 8h."
+
+    align-self:
+        "Apenas o funcionário João entra às 9h."
+
+    Ou seja, align-self sobrescreve a regra geral
+    apenas para um elemento específico.
+    ============================================================
+    -->
+
+</body>
+
+</html>

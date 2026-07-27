@@ -1,0 +1,146 @@
+      /*
+        ============================================================
+                            ALIGN SELF
+        ============================================================
+
+        O align-self permite alterar o alinhamento de UM ÚNICO
+        elemento dentro de um container Flexbox.
+
+        Ele substitui o valor definido em align-items apenas
+        para o item onde foi aplicado.
+
+        Para funcionar é necessário que o elemento pai possua:
+
+            display: flex;
+
+        ============================================================
+        */
+
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            margin: 20px;
+        }
+
+
+        h1{
+            text-align: center;
+        }
+
+
+        h2{
+            margin-top: 40px;
+        }
+
+
+
+        /*
+        Container Flex.
+
+        align-items:center faz com que TODOS os itens fiquem
+        centralizados verticalmente.
+
+        Depois utilizaremos align-self para alterar apenas
+        um dos elementos.
+        */
+
+        .container{
+
+            display: flex;
+
+            align-items: center;
+
+            height: 250px;
+
+            border: 3px solid #333;
+
+            background: white;
+
+            margin-bottom: 40px;
+        }
+
+
+
+        /*
+        Estilo padrão das caixas.
+        */
+
+        .item{
+
+            width: 80px;
+
+            height: 80px;
+
+            margin: 10px;
+
+            background: steelblue;
+
+            color: white;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+
+        /*
+        ============================================================
+                    EXEMPLO DE ALIGN-SELF
+        ============================================================
+
+        Apenas este elemento ignora o align-items:center
+        definido no container.
+
+        Os demais continuam centralizados.
+        */
+
+        .destaque{
+
+            align-self: flex-start;
+
+            background: crimson;
+
+        }
+
+        .destaque1{
+
+            align-self: flex-end;
+
+            background: rgb(20, 220, 117);
+
+        }
+
+
+
+        /*
+        Outros valores possíveis:
+
+        align-self: auto;
+            Utiliza o valor herdado do align-items.
+
+        align-self: flex-start;
+            Posiciona o item no início do eixo cruzado.
+
+        align-self: center;
+            Centraliza o item.
+
+        align-self: flex-end;
+            Posiciona o item no final.
+
+        align-self: stretch;
+            Estica o item para ocupar o espaço disponível
+            (desde que sua altura não esteja definida).
+
+        align-self: baseline;
+            Alinha o texto do item com a linha base dos demais.
+
+        */
