@@ -1,0 +1,206 @@
+
+        /*
+        ============================================================
+            JUSTIFY CONTENT | ALIGN ITEMS | ALIGN CONTENT
+        ============================================================
+
+        Essas propriedades controlam o alinhamento dos elementos
+        dentro de um container Flexbox.
+
+        Antes de utilizá-las, o elemento pai deve possuir:
+
+            display: flex;
+
+        Elas atuam de maneiras diferentes:
+
+        ✔ justify-content
+            Alinha os elementos no eixo principal (Main Axis).
+
+        ✔ align-items
+            Alinha os elementos individualmente no eixo cruzado (Cross Axis).
+
+        ✔ align-content
+            Alinha as LINHAS de elementos quando existe quebra de linha
+            (flex-wrap: wrap).
+
+        IMPORTANTE:
+
+        align-content NÃO faz efeito quando existe apenas uma linha
+        de elementos.
+
+        ============================================================
+        */
+
+
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            margin: 20px;
+        }
+
+
+        h1{
+            text-align: center;
+        }
+
+
+        h2{
+            margin-top: 50px;
+        }
+
+
+        /*
+        Caixa utilizada em todos os exemplos.
+
+        display:flex ativa o Flexbox.
+
+        border apenas para facilitar a visualização.
+
+        margin-bottom cria espaço entre os exemplos.
+        */
+
+        .container{
+            display: flex;
+            border: 3px solid #333;
+            background: white;
+            margin-bottom: 40px;
+            height: 200px;
+        }
+
+
+        /*
+        Estilo padrão das caixas.
+
+        Apenas para visualização.
+        */
+
+        .item{
+            width: 80px;
+            height: 80px;
+            background: steelblue;
+            color: white;
+            font-weight: bold;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 5px;
+        }
+
+
+
+        /*==========================================================
+                            JUSTIFY CONTENT
+        ============================================================*/
+
+        /*
+        Justify Content trabalha no eixo principal.
+
+        Como o flex-direction padrão é row,
+        o eixo principal é horizontal.
+
+        Ele controla a distribuição dos elementos.
+        */
+
+        .justify{
+            justify-content: space-between;
+        }
+
+        /*
+        Outros valores importantes:
+
+        justify-content: flex-start;
+            Todos ficam no início.
+
+        justify-content: center;
+            Todos ficam centralizados.
+
+        justify-content: flex-end;
+            Todos vão para o final.
+
+        justify-content: space-around;
+            Espaço ao redor dos elementos.
+
+        justify-content: space-evenly;
+            Espaço exatamente igual entre todos.
+
+        justify-content: space-between;
+            Primeiro e último encostam nas extremidades.
+        */
+
+
+
+
+
+        /*==========================================================
+                            ALIGN ITEMS
+        ============================================================*/
+
+        /*
+        Align Items trabalha no eixo cruzado.
+
+        Como o flex-direction é row,
+        o eixo cruzado é vertical.
+
+        Todos os itens serão alinhados da mesma forma.
+        */
+
+        .align-items{
+            align-items: center;
+        }
+
+        /*
+        Valores mais utilizados:
+
+        stretch (padrão)
+        flex-start
+        center
+        flex-end
+        baseline
+        */
+
+
+
+
+
+        /*==========================================================
+                            ALIGN CONTENT
+        ============================================================*/
+
+        /*
+        Align Content só funciona quando:
+
+            flex-wrap: wrap;
+
+        e quando existir mais de uma linha.
+
+        Neste exemplo diminuímos a largura do container
+        para obrigar a quebra das caixas.
+        */
+
+        .align-content{
+
+            width: 300px;
+
+            flex-wrap: wrap;
+
+            align-content: space-between;
+        }
+
+        /*
+        Valores disponíveis:
+
+        flex-start
+        center
+        flex-end
+        stretch
+        space-around
+        space-between
+        space-evenly
+
+        Essa propriedade NÃO movimenta os itens.
+
+        Ela movimenta as LINHAS de itens.
+        */
