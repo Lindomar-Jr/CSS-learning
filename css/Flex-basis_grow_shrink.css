@@ -1,0 +1,194 @@
+
+        /*
+        ==========================================================
+        CONTAINER FLEX
+        ==========================================================
+
+        Todo elemento que receber display: flex se torna um
+        contêiner flexível.
+
+        Seus elementos filhos passam a ser chamados de "itens flex"
+        e podem utilizar propriedades como:
+
+        - flex-basis
+        - flex-grow
+        - flex-shrink
+        - flex
+
+        */
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            margin:20px;
+        }
+
+        h1, h2{
+            text-align:center;
+        }
+
+        .container{
+            display:flex;
+            border:3px solid #333;
+            background:white;
+            margin:30px auto;
+            max-width:900px;
+            padding:10px;
+            gap:10px;
+        }
+
+        .item{
+            background:#2d73cfd4;
+            color:white;
+            padding:20px;
+            text-align:center;
+            font-size:18px;
+        }
+
+
+        /*
+        ==========================================================
+        FLEX-BASIS
+        ==========================================================
+
+        Define o tamanho inicial do item ANTES do Flexbox distribuir
+        o espaço disponível.
+
+        Pode ser considerado uma largura (ou altura, dependendo do
+        flex-direction).
+
+        Sintaxe:
+
+        flex-basis: auto;
+        flex-basis: 200px;
+        flex-basis: 30%;
+
+        */
+
+        .basis1{
+            flex-basis:200px;
+        }
+
+        .basis2{
+            flex-basis: auto;
+        }
+
+        .basis3{
+            flex-basis:50%;
+        }
+
+
+
+        /*
+        ==========================================================
+        FLEX-GROW
+        ==========================================================
+
+        Controla quanto um item pode CRESCER quando sobra espaço
+        dentro do container.
+
+        Valor padrão:
+
+        flex-grow:0;
+
+        Isso significa:
+
+        "Não aumente meu tamanho."
+
+        Quanto maior o valor,
+        maior será a participação do item no espaço livre.
+
+        */
+
+        .grow1{
+            flex-grow:1;
+        }
+
+        .grow2{
+            flex-grow:2;
+        }
+
+        .grow3{
+            flex-grow:3;
+        }
+
+
+
+        /*
+        ==========================================================
+        FLEX-SHRINK
+        ==========================================================
+
+        Define quanto o item pode DIMINUIR quando falta espaço.
+
+        Valor padrão:
+
+        flex-shrink:1;
+
+        Isso significa que todos os itens podem encolher.
+
+        Se utilizar:
+
+        flex-shrink:0;
+
+        o item nunca será reduzido.
+
+        */
+
+        .shrink1{
+            flex-basis:350px;
+            flex-shrink:1;
+        }
+
+        .shrink2{
+            flex-basis:350px;
+            flex-shrink:0;
+        }
+
+        .shrink3{
+            flex-basis:350px;
+            flex-shrink:2;
+        }
+
+
+
+        /*
+        ==========================================================
+        FLEX
+        ==========================================================
+
+        A propriedade "flex" é um atalho (shorthand).
+
+        Ela reúne:
+
+        flex-grow
+        flex-shrink
+        flex-basis
+
+        Sintaxe:
+
+        flex: grow shrink basis;
+
+        Exemplo:
+
+        flex: 1 1 200px;
+
+        Equivale a:
+
+        flex-grow:1;
+        flex-shrink:1;
+        flex-basis:200px;
+
+        */
+
+        .flex1{
+            flex:3 1 150px;
+        }
+
+        .flex2{
+            flex:1 1 150px;
+        }
+
+        .flex3{
+            flex:2 1 150px;
+        }

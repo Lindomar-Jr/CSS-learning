@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Basis, Flex Grow, Flex Shrink e Flex</title>
+
+        <link rel="stylesheet" href="../../css/Flex-basis_grow_shrink.css">
+
+</head>
+
+<body>
+
+    <h1>Flexbox - Flex Basis, Flex Grow, Flex Shrink e Flex</h1>
+
+
+    <!-- ===================================================== -->
+    <!-- FLEX BASIS -->
+    <!-- ===================================================== -->
+
+    <h2>Exemplo 1 - Flex Basis</h2>
+
+    <!--
+    Cada item possui um tamanho inicial diferente.
+
+    Observe que:
+
+    Item 1 inicia com 100px
+
+    Item 2 inicia com 200px
+
+    Item 3 inicia com 300px
+
+    -->
+
+    <div class="container">
+
+        <div class="item basis1">
+            Basis 100px
+        </div>
+
+        <div class="item basis2">
+            Basis 200px
+        </div>
+
+        <div class="item basis3">
+            Basis 300px
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- FLEX GROW -->
+    <!-- ===================================================== -->
+
+    <h2>Exemplo 2 - Flex Grow</h2>
+
+    <!--
+
+    Existe espaço sobrando.
+
+    O Flexbox irá distribuir esse espaço.
+
+    grow 1 = recebe uma parte.
+
+    grow 2 = recebe duas partes.
+
+    grow 3 = recebe três partes.
+
+    Quanto maior o número,
+    maior será o crescimento.
+
+    -->
+
+    <div class="container">
+
+        <div class="item grow1">
+            Grow 1
+        </div>
+
+        <div class="item grow2">
+            Grow 2
+        </div>
+
+        <div class="item grow3">
+            Grow 3
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- FLEX SHRINK -->
+    <!-- ===================================================== -->
+
+    <h2>Exemplo 3 - Flex Shrink</h2>
+
+    <!--
+
+    Os três itens possuem 350px.
+
+    Porém o container não possui espaço suficiente.
+
+    Resultado:
+
+    Item 1 pode diminuir normalmente.
+
+    Item 2 NÃO diminui.
+
+    Item 3 diminui duas vezes mais rápido
+    que o Item 1.
+
+    -->
+
+    <div class="container">
+
+        <div class="item shrink1">
+            Shrink 1
+        </div>
+
+        <div class="item shrink2">
+            Shrink 0
+        </div>
+
+        <div class="item shrink3">
+            Shrink 2
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- FLEX -->
+    <!-- ===================================================== -->
+
+    <h2>Exemplo 4 - Propriedade Flex</h2>
+
+    <!--
+
+    flex:1 1 150px
+
+    grow = 1
+    shrink = 1
+    basis = 150px
+
+    -----------------------------------
+
+    flex:2 1 150px
+
+    Cresce duas vezes mais.
+
+    -----------------------------------
+
+    flex:1 2 250px
+
+    Cresce normalmente.
+
+    Diminui duas vezes mais.
+
+    Começa com largura de 250px.
+
+    -->
+
+    <div class="container">
+
+        <div class="item flex1">
+            flex: 1 1 150px
+        </div>
+
+        <div class="item flex2">
+            flex: 2 1 150px
+        </div>
+
+        <div class="item flex3">
+            flex: 1 2 250px
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- RESUMO -->
+    <!-- ===================================================== -->
+
+    <!--
+
+    RESUMO DAS PROPRIEDADES
+
+    flex-basis
+    --------------------------
+    Define o tamanho inicial do item.
+
+    flex-grow
+    --------------------------
+    Define quanto o item cresce quando sobra espaço.
+
+    flex-shrink
+    --------------------------
+    Define quanto o item diminui quando falta espaço.
+
+    flex
+    --------------------------
+    Atalho para:
+
+    flex-grow
+    flex-shrink
+    flex-basis
+
+    Exemplo muito utilizado:
+
+    flex: 1;
+
+    Equivale aproximadamente a:
+
+    flex-grow:1;
+    flex-shrink:1;
+    flex-basis:0;
+
+    É muito usado para dividir igualmente o espaço disponível
+    entre os itens do container.
+
+    -->
+
+</body>
+</html>
