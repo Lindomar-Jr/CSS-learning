@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Order</title>
+
+    <link rel="stylesheet" href="../../css/order.css">
+
+</head>
+
+<body>
+
+    <h1>Flexbox - Propriedade Order</h1>
+
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 1 -->
+    <!-- ====================================================== -->
+
+    <h2>Exemplo 1 - Ordem padrão</h2>
+
+    <!--
+
+    Todos possuem order:0.
+
+    A ordem visual será:
+
+    Item 1
+    Item 2
+    Item 3
+
+    -->
+
+    <div class="container">
+
+        <div class="item ordem-normal">
+            Item 1
+        </div>
+
+        <div class="item ordem-normal">
+            Item 2
+        </div>
+
+        <div class="item ordem-normal">
+            Item 3
+        </div>
+
+    </div>
+
+
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 2 -->
+    <!-- ====================================================== -->
+
+    <h2>Exemplo 2 - Order negativo</h2>
+
+    <!--
+
+    O HTML continua sendo:
+
+    Item 1
+    Item 2
+    Item 3
+
+    Porém o Item 2 possui order:-1.
+
+    Visualmente ele aparecerá primeiro.
+
+    -->
+
+    <div class="container">
+
+        <div class="item">
+            Item 1
+        </div>
+
+        <div class="item primeiro">
+            Item 2 (order:-1)
+        </div>
+
+        <div class="item">
+            Item 3
+        </div>
+
+    </div>
+
+
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 3 -->
+    <!-- ====================================================== -->
+
+    <h2>Exemplo 3 - Enviando um item para o final</h2>
+
+    <!--
+
+    O Item 1 possui order:5.
+
+    Como possui o maior valor,
+    será exibido por último.
+
+    -->
+
+    <div class="container">
+
+        <div class="item ultimo">
+            Item 1 (order:5)
+        </div>
+
+        <div class="item">
+            Item 2
+        </div>
+
+        <div class="item">
+            Item 3
+        </div>
+
+    </div>
+
+
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 4 -->
+    <!-- ====================================================== -->
+
+    <h2>Exemplo 4 - Diversos valores de Order</h2>
+
+    <!--
+
+    HTML
+
+    Item A
+    Item B
+    Item C
+    Item D
+
+    Ordem visual
+
+    Item B (-2)
+    Item D (0)
+    Item C (1)
+    Item A (3)
+
+    -->
+
+    <div class="container">
+
+        <div class="item item1">
+            Item A (3)
+        </div>
+
+        <div class="item item2">
+            Item B (-2)
+        </div>
+
+        <div class="item item3">
+            Item C (1)
+        </div>
+
+        <div class="item item4">
+            Item D (0)
+        </div>
+
+    </div>
+
+
+
+    <!-- ====================================================== -->
+    <!-- RESUMO -->
+    <!-- ====================================================== -->
+
+    <!--
+
+    RESUMO
+
+    order:0
+    --------------------------
+    Valor padrão.
+
+    order:-1
+    --------------------------
+    Faz o item aparecer antes dos demais.
+
+    order:1
+    --------------------------
+    Faz o item aparecer depois dos que possuem
+    valores menores.
+
+    Quanto menor o número,
+    mais cedo o item será exibido.
+
+    Quanto maior o número,
+    mais tarde ele será exibido.
+
+    IMPORTANTE
+
+    O order altera apenas a aparência visual.
+
+    A ordem do HTML continua exatamente a mesma.
+
+    Sempre prefira organizar corretamente o HTML e utilize
+    order apenas quando houver necessidade de alterar o layout.
+
+    -->
+
+</body>
+</html>

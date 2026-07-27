@@ -1,0 +1,179 @@
+        /*
+        ==========================================================
+        ORDER
+        ==========================================================
+
+        A propriedade order permite alterar a ordem visual dos itens
+        dentro de um container Flexbox, sem modificar a estrutura do HTML.
+
+        Isso significa que você pode reorganizar os elementos apenas
+        utilizando CSS.
+
+        Sintaxe:
+
+        order: valor;
+
+        O valor pode ser positivo, negativo ou zero.
+
+        Valor padrão:
+
+        order: 0;
+
+        Todos os itens possuem order: 0 por padrão.
+
+        O Flexbox organiza os elementos do menor valor para o maior.
+        */
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            margin:20px;
+        }
+
+        h1,
+        h2{
+            text-align:center;
+        }
+
+        .container{
+            display:flex;
+            gap:10px;
+            border:3px solid #333;
+            background:white;
+            padding:15px;
+            margin:30px auto;
+            max-width:900px;
+        }
+
+        .item{
+            flex:1;
+            background:#4CAF50;
+            color:white;
+            text-align:center;
+            padding:25px;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+
+        /*
+        ==========================================================
+        EXEMPLO 1
+        ==========================================================
+
+        Todos possuem order:0.
+
+        Como todos possuem o mesmo valor,
+        a ordem visual será exatamente igual à ordem do HTML.
+        */
+
+        .ordem-normal{
+            order:0;
+        }
+
+
+        /*
+        ==========================================================
+        EXEMPLO 2
+        ==========================================================
+
+        O item azul receberá order:-1.
+
+        Como -1 é menor que 0,
+        ele será exibido primeiro.
+
+        Ordem final:
+
+        Azul
+        Verde
+        Verde
+        */
+
+        .primeiro{
+            order:-1;
+            background:#2196F3;
+        }
+
+
+        /*
+        ==========================================================
+        EXEMPLO 3
+        ==========================================================
+
+        O item vermelho recebe order:5.
+
+        Como 5 é maior que 0,
+        ele será enviado para o final.
+
+        Ordem final:
+
+        Verde
+        Verde
+        Vermelho
+        */
+
+        .ultimo{
+            order:5;
+            background:#E53935;
+        }
+
+
+        /*
+        ==========================================================
+        EXEMPLO 4
+        ==========================================================
+
+        Cada item possui um valor diferente.
+
+        Menor número aparece primeiro.
+
+        Ordem:
+
+        -2
+        0
+        1
+        3
+
+        */
+
+        .item1{
+            order:3;
+            background:#FF9800;
+        }
+
+        .item2{
+            order:-2;
+            background:#3F51B5;
+        }
+
+        .item3{
+            order:1;
+            background:#009688;
+        }
+
+        .item4{
+            order:0;
+            background:#8E24AA;
+        }
+
+
+        /*
+        ==========================================================
+        OBSERVAÇÃO IMPORTANTE
+        ==========================================================
+
+        O order altera apenas a posição visual.
+
+        A estrutura do HTML permanece exatamente a mesma.
+
+        Isso significa que:
+
+        - leitores de tela;
+        - mecanismos de busca;
+        - navegação por teclado;
+
+        continuam considerando a ordem original do documento.
+
+        Portanto, utilize order apenas quando fizer sentido para
+        o layout e nunca para corrigir uma estrutura HTML mal organizada.
+        */
