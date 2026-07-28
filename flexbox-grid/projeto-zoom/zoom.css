@@ -1,0 +1,47 @@
+header {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    flex-wrap: wrap;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+     display: flex;
+    list-style: none;
+   
+}
+
+ul a:link, a:visited {
+    padding: 10px;
+    text-decoration: none;
+    color: #484848;
+}
+
+ul a:hover {
+    color: #0B5CFF;
+}
+
+.botao {
+    border: 1px solid #0B5CFF;
+    border-radius: 25px;
+    padding: 5px 30px;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background-color: #d2e1ff;
+}
+
+.botao.destaque {
+    background-color: #0B5CFF;
+    color: white;
+}
+
+.botao.destaque:hover {
+    background-color: #2d73ff;
+}
+
