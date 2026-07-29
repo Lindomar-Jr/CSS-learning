@@ -1,0 +1,304 @@
+/*
+		====================================================
+		GRID-TEMPLATE-AREAS
+		====================================================
+
+		É uma propriedade do CSS Grid utilizada para
+		ORGANIZAR visualmente os elementos da página.
+
+		Ao invés de posicionar os itens usando números
+		(grid-column e grid-row), damos um NOME para
+		cada área.
+
+		Isso torna o código muito mais legível e fácil
+		de manter.
+
+		É muito utilizado em layouts completos de sites.
+		*/
+
+		/* Reset simples */
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		body {
+			background: #ececec;
+			padding: 30px;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		/*
+		====================================================
+		CONTAINER GRID
+		====================================================
+
+		display: grid
+		Transforma o elemento em um Grid Container.
+		*/
+
+		.container {
+
+			display: grid;
+
+			/*
+			Cria três colunas.
+
+			200px -> Menu Sidebar
+
+			1fr -> Conteúdo Principal
+
+            200px -> publicidade lateral
+			*/
+
+			grid-template-columns: 200px 1fr 200px;
+
+			/*
+			Cria quatro linhas.
+
+			Cabeçalho
+			Menu
+			Conteúdo
+			Rodapé
+			*/
+
+			grid-template-rows:
+				90px
+				60px
+				1fr
+				80px;
+
+			/*
+			================================================
+			GRID TEMPLATE AREAS
+			================================================
+
+			Cada palavra representa uma área.
+
+			O navegador desenha o layout exatamente
+			como foi escrito abaixo.
+
+			Visualmente:
+
+			+-------------------------------------+
+			|              header                 |
+			+-------------------------------------+
+			|                menu                 |
+			+-------------+-------------+---------+
+			| sidebar     | content     | ads     |
+			+-------------+-------------+---------+
+			|              footer                 |
+			+-------------------------------------+
+
+			Observe que:
+
+			header ocupa as 3 colunas.
+
+			menu ocupa as 3 colunas.
+
+			content ocupa apenas a coluna central.
+
+			*/
+
+			grid-template-areas:
+
+				"header header header"
+
+				"menu menu menu"
+
+				" sidebar content ads"
+
+				"footer footer footer";
+
+			gap: 15px;
+
+			height: 100vh;
+
+		}
+
+		/*
+		====================================================
+		CADA ITEM RECEBE UM NOME
+		====================================================
+
+		O nome deve ser exatamente igual ao definido
+		no grid-template-areas.
+
+		*/
+
+		header {
+
+			grid-area: header;
+
+			background: steelblue;
+			color: white;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			font-size: 22px;
+			font-weight: bold;
+
+		}
+
+		nav {
+
+			grid-area: menu;
+
+			background: #444;
+			color: white;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+		}
+
+		aside.esquerda {
+
+			grid-area: sidebar;
+
+			background: tomato;
+			color: white;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+		}
+
+		main {
+
+			grid-area: content;
+
+			background: white;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			font-size: 22px;
+
+			border: 2px solid #ccc;
+
+		}
+
+		aside.direita {
+
+			grid-area: ads;
+
+			background: gold;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			font-weight: bold;
+
+		}
+
+		footer {
+
+			grid-area: footer;
+
+			background: seagreen;
+			color: white;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+		}
+
+		/*
+		====================================================
+		ÁREAS VAZIAS
+		====================================================
+
+		O ponto (.)
+		significa um espaço vazio.
+
+		Exemplo:
+
+		grid-template-areas:
+
+		"header header header"
+
+		". content ."
+
+		"footer footer footer";
+
+		Assim sobra espaço vazio nas laterais.
+		*/
+
+		/*
+		====================================================
+		MESCLANDO ÁREAS
+		====================================================
+
+		Basta repetir o mesmo nome.
+
+		Exemplo:
+
+		"menu menu menu"
+
+		O menu ocupará as três colunas.
+
+		Outro exemplo:
+
+		"sidebar content content"
+
+		O conteúdo ocupará duas colunas.
+		*/
+
+		/*
+		====================================================
+		RESPONSIVIDADE
+		====================================================
+
+		Em telas menores podemos reorganizar
+		todas as áreas sem alterar o HTML.
+
+		Observe como o layout muda abaixo.
+		*/
+
+		@media (max-width:768px) {
+
+			.container {
+
+				grid-template-columns: 1fr;
+
+				grid-template-rows:
+
+					80px
+					60px
+					150px
+					1fr
+					120px
+					80px;
+
+				grid-template-areas:
+
+					"header"
+
+					"menu"
+
+					"sidebar"
+
+					"content"
+
+					"ads"
+
+					"footer";
+
+			}
+
+		}
