@@ -1,0 +1,226 @@
+ /*
+    ============================================================================
+        CSS GRID - GAP
+    ============================================================================
+
+    Depois de definir as colunas e as linhas do Grid,
+    normalmente desejamos criar um espaçamento entre
+    os elementos.
+
+    Para isso utilizamos a propriedade:
+
+        gap
+
+    O gap cria um espaço ENTRE as células do Grid.
+
+    Diferente da propriedade margin, o gap adiciona
+    espaçamento apenas entre os itens, sem alterar
+    as bordas externas do container.
+
+    Atualmente, utilizar gap é a forma recomendada
+    para criar espaçamentos em Grid.
+    */
+
+    body{
+        margin: 0;
+        padding: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+    }
+
+    h1{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    h2{
+        margin-top: 60px;
+    }
+
+    /*
+    ============================================================================
+        ESTILO DOS ITENS
+    ============================================================================
+
+    Apenas uma estilização para facilitar
+    a visualização dos espaçamentos.
+    */
+
+    .item{
+        background: steelblue;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        padding: 30px;
+        border-radius: 5px;
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 1
+        SEM GAP
+    ============================================================================
+
+    Neste exemplo não existe nenhum espaçamento.
+
+    Observe que todos os elementos ficam
+    completamente encostados.
+    */
+
+    .sem-gap{
+
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 2
+        GAP
+    ============================================================================
+
+        gap: 20px;
+
+    Cria um espaçamento de 20 pixels
+    entre todas as linhas e colunas.
+
+    É equivalente a utilizar:
+
+        row-gap: 20px;
+        column-gap: 20px;
+
+    Porém, utilizando apenas uma propriedade.
+    */
+
+    .gap{
+
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+
+        gap: 20px;
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 3
+        ROW-GAP
+    ============================================================================
+
+        row-gap: 30px;
+
+    Cria espaçamento apenas
+    entre as linhas.
+
+    As colunas continuam sem
+    qualquer espaçamento.
+    */
+
+    .row-gap{
+
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+
+        row-gap: 30px;
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 4
+        COLUMN-GAP
+    ============================================================================
+
+        column-gap: 40px;
+
+    Cria espaçamento apenas
+    entre as colunas.
+
+    As linhas permanecem encostadas.
+    */
+
+    .column-gap{
+
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+
+        column-gap: 40px;
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 5
+        GAP COM DOIS VALORES
+    ============================================================================
+
+        gap: 20px 50px;
+
+    Primeiro valor:
+        Espaçamento entre as linhas.
+
+    Segundo valor:
+        Espaçamento entre as colunas.
+
+    Equivale a escrever:
+
+        row-gap: 20px;
+        column-gap: 50px;
+
+    Esse formato é útil quando desejamos
+    espaçamentos diferentes para linhas
+    e colunas.
+    */
+
+    .gap-duplo{
+
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+
+        gap: 20px 50px;
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        RESUMO
+
+        gap
+            Espaçamento entre linhas e colunas.
+
+        row-gap
+            Espaçamento apenas entre as linhas.
+
+        column-gap
+            Espaçamento apenas entre as colunas.
+
+        gap: linha coluna;
+            Primeiro valor -> linhas.
+            Segundo valor -> colunas.
+
+    DICA
+
+    Sempre que desejar separar os itens de um
+    Grid, prefira utilizar gap ao invés de margin.
+
+    O código fica mais limpo, organizado e
+    fácil de manter.
+    ============================================================================
+    */
