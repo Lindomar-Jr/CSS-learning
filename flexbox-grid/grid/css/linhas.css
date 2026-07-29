@@ -1,0 +1,265 @@
+  /*
+    ============================================================================
+        CSS GRID - LINHAS
+    ============================================================================
+
+    Depois de definir as colunas com:
+
+        grid-template-columns;
+
+    podemos definir a altura das linhas utilizando:
+
+        grid-template-rows;
+
+    Essa propriedade determina:
+
+    ✔ Quantas linhas o Grid terá.
+    ✔ A altura de cada linha.
+    ✔ Como o espaço vertical será distribuído.
+
+    Enquanto as colunas organizam os elementos
+    horizontalmente, as linhas organizam os
+    elementos verticalmente.
+    */
+
+    body{
+        margin: 0;
+        padding: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+    }
+
+    h1{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    h2{
+        margin-top: 60px;
+    }
+
+    /*
+    ============================================================================
+        ESTILO DOS ITENS
+    ============================================================================
+
+    Apenas uma estilização para facilitar
+    a visualização das linhas.
+    */
+
+    .item{
+        background: steelblue;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        border: 2px solid white;
+
+        /* Centraliza o conteúdo dentro da célula */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 1
+        DUAS LINHAS COM ALTURAS FIXAS
+    ============================================================================
+
+        grid-template-rows: 100px 150px;
+
+    Primeira linha:
+        100 pixels de altura.
+
+    Segunda linha:
+        150 pixels de altura.
+
+    As alturas permanecerão fixas,
+    independentemente do tamanho da tela.
+    */
+
+    .linhas-fixas{
+
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+
+        grid-template-rows: 100px 200px;
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 2
+        UTILIZANDO repeat()
+    ============================================================================
+
+        repeat(3,80px)
+
+    Cria três linhas,
+    cada uma com 80 pixels.
+
+    Equivale a escrever:
+
+        80px 80px 80px
+
+    O repeat() torna o código
+    mais limpo e organizado.
+    */
+
+    .repeat{
+
+        display: grid;
+
+        grid-template-columns: repeat(2,1fr);
+
+        grid-template-rows: repeat(3,100px);
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 3
+        LINHAS PROPORCIONAIS
+    ============================================================================
+
+        1fr 2fr
+
+    A altura disponível será dividida
+    em três partes.
+
+    Primeira linha:
+        1 parte.
+
+    Segunda linha:
+        2 partes.
+
+    A segunda linha ficará
+    duas vezes maior que a primeira.
+
+    OBSERVAÇÃO:
+
+    Para que "fr" funcione nas linhas,
+    o container precisa possuir uma altura definida.
+    */
+
+    .linhas-proporcionais{
+
+        display: grid;
+
+        grid-template-columns: repeat(2,1fr);
+
+        grid-template-rows: 1fr 2fr;
+
+        height: 300px;
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 4
+        LINHAS MISTAS
+    ============================================================================
+
+        100px 1fr
+
+    Primeira linha:
+        altura fixa de 100px.
+
+    Segunda linha:
+        ocupa todo o restante
+        da altura disponível.
+
+    Também é necessário definir
+    uma altura para o container.
+    */
+
+    .linhas-mistas{
+
+        display: grid;
+
+        grid-template-columns: repeat(2,1fr);
+
+        grid-template-rows: 100px 1fr;
+
+        height: 300px;
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 5
+        CRIAÇÃO AUTOMÁTICA DE LINHAS
+    ============================================================================
+
+    Neste exemplo foram definidas
+    apenas duas linhas.
+
+    Porém existem nove elementos.
+
+    Quando faltar espaço,
+    o navegador criará novas linhas
+    automaticamente para acomodar
+    os demais itens.
+
+    As linhas criadas automaticamente
+    terão altura baseada no conteúdo,
+    pois nenhuma altura foi definida
+    para elas.
+    */
+
+    .linhas-automaticas{
+
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+
+        grid-template-rows: 80px 80px;
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        RESUMO
+
+        display: grid;
+            Ativa o Grid.
+
+        grid-template-rows
+            Define a quantidade e a altura
+            das linhas.
+
+        px
+            Altura fixa.
+
+        fr
+            Divide proporcionalmente
+            a altura disponível.
+
+        repeat()
+            Evita repetir os mesmos valores.
+
+        Importante:
+
+        Quando utilizar "fr" nas linhas,
+        defina uma altura para o container
+        utilizando, por exemplo:
+
+            height: 300px;
+
+        Caso contrário, o navegador não terá
+        uma referência para distribuir
+        o espaço vertical.
+    ============================================================================
+    */
