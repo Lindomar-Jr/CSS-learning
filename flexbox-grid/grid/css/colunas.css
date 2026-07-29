@@ -1,0 +1,254 @@
+ /*
+    ============================================================================
+        CSS GRID - COLUNAS
+    ============================================================================
+
+    O CSS Grid é um sistema de layout bidimensional.
+
+    Para criar um Grid, o primeiro passo é transformar
+    um elemento em um container Grid utilizando:
+
+        display: grid;
+
+    Depois disso, utilizamos a propriedade:
+
+        grid-template-columns;
+
+    Ela é responsável por definir:
+
+    ✔ Quantas colunas existirão.
+    ✔ O tamanho de cada coluna.
+    ✔ Como o espaço será distribuído.
+
+    Todo elemento filho do container passa
+    a ocupar automaticamente uma célula do Grid.
+    */
+
+    body{
+        margin: 0;
+        padding: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+    }
+
+    h1{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    h2{
+        margin-top: 60px;
+    }
+
+    /*
+    ============================================================================
+        ESTILO DOS ITENS
+    ============================================================================
+
+    Apenas estilização visual para facilitar
+    a visualização das colunas.
+    */
+
+    .item{
+        background: steelblue;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        padding: 30px;
+        border: 2px solid white;
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 1
+        TRÊS COLUNAS IGUAIS
+    ============================================================================
+
+        grid-template-columns: 1fr 1fr 1fr;
+
+    "fr" significa Fraction (fração).
+
+    O espaço disponível será dividido igualmente
+    entre todas as colunas.
+
+    Resultado:
+
+        |------|------|------|
+
+    Cada coluna ocupa exatamente
+    um terço da largura disponível.
+    */
+
+    .colunas-iguais{
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr 1fr;
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 2
+        UTILIZANDO repeat()
+    ============================================================================
+
+    Em vez de escrever:
+
+        1fr 1fr 1fr
+
+    podemos utilizar:
+
+        repeat(3, 1fr)
+
+    O primeiro parâmetro informa
+    quantas vezes o valor será repetido.
+
+    O segundo informa o tamanho
+    de cada coluna.
+
+    É uma forma mais limpa
+    e profissional de escrever o código.
+    */
+
+    .repeat{
+
+        display: grid;
+
+        grid-template-columns: repeat(3,1fr);
+
+        border: 3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 3
+        COLUNAS FIXAS
+    ============================================================================
+
+        200px 200px 200px
+
+    Cada coluna possui exatamente
+    200 pixels.
+
+    Mesmo que a tela aumente,
+    elas continuarão com esse tamanho.
+    */
+
+    .colunas-fixas{
+
+        display:grid;
+
+        grid-template-columns:200px 200px 200px;
+
+        border:3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 4
+        COLUNAS PROPORCIONAIS
+    ============================================================================
+
+        1fr 2fr 1fr
+
+    O espaço será dividido em:
+
+        1 + 2 + 1 = 4 partes
+
+    Primeira coluna:
+        1 parte
+
+    Segunda coluna:
+        2 partes
+
+    Terceira coluna:
+        1 parte
+
+    Visualmente:
+
+        |----|--------|----|
+
+    A coluna central terá o dobro
+    da largura das demais.
+    */
+
+    .colunas-proporcionais{
+
+        display:grid;
+
+        grid-template-columns:1fr 2fr 1fr;
+
+        border:3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        EXEMPLO 5
+        COLUNAS MISTAS
+    ============================================================================
+
+        250px 1fr 2fr
+
+    Primeira coluna:
+        largura fixa.
+
+    Segunda coluna:
+        ocupa uma fração.
+
+    Terceira coluna:
+        ocupa duas frações.
+
+    Primeiro o navegador reserva
+    os 250px.
+
+    Depois divide o espaço restante
+    entre as colunas em "fr".
+    */
+
+    .colunas-mistas{
+
+        display:grid;
+
+        grid-template-columns:250px 1fr 2fr;
+
+        border:3px solid #333;
+
+    }
+
+    /*
+    ============================================================================
+        RESUMO
+
+        display:grid;
+            Ativa o Grid.
+
+        grid-template-columns
+            Define a quantidade e o tamanho
+            das colunas.
+
+        px
+            Tamanho fixo.
+
+        fr
+            Divide o espaço restante
+            proporcionalmente.
+
+        repeat()
+            Evita repetir o mesmo valor
+            diversas vezes.
+
+    Dica:
+
+    Em layouts responsivos, prefira utilizar
+    "fr" sempre que possível, pois as colunas
+    se adaptam melhor aos diferentes tamanhos
+    de tela.
+    ============================================================================
+    */
