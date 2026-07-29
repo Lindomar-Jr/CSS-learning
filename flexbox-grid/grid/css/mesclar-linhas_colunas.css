@@ -1,0 +1,361 @@
+      /*
+        ============================================================
+        CSS GRID - MESCLAGEM DE LINHAS E COLUNAS
+        ============================================================
+
+        Neste arquivo você aprenderá:
+
+        ✔ grid-column
+        ✔ grid-row
+        ✔ grid-area (mesclagem)
+        ✔ Nomeação de linhas (Grid Lines)
+        ✔ Nomeação de áreas (Grid Template Areas)
+        ✔ Propriedade simplificada (grid-area)
+
+        Estes recursos são utilizados para posicionar elementos
+        exatamente onde você deseja dentro do Grid.
+
+        Imagine uma planilha do Excel.
+        Cada célula possui linhas e colunas.
+
+        O Grid funciona praticamente da mesma maneira.
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ececec;
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin: 40px 0 15px;
+        }
+
+        .container {
+            margin-bottom: 60px;
+            border: 3px solid #222;
+            background: white;
+            padding: 15px;
+        }
+
+        .item {
+            background: steelblue;
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+            border: 2px solid white;
+        }
+
+        /*
+        ============================================================
+        EXEMPLO 1
+        MESCLANDO COLUNAS
+        ============================================================
+
+        grid-column determina em quais linhas da coluna
+        o item irá começar e terminar.
+
+        Sintaxe:
+
+        grid-column: início / fim;
+
+        Exemplo:
+
+        grid-column: 1 / 3;
+
+        Significa:
+
+        começa na linha 1
+        termina na linha 3
+
+        Portanto ocupa DUAS COLUNAS.
+        */
+
+        .grid-colunas {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 10px;
+        }
+
+        .coluna-grande {
+
+            /* ocupa da linha 1 até a linha 3 */
+
+            grid-column: 1 / 3;
+
+            background: crimson;
+        }
+
+        /*
+        ============================================================
+        Também existe uma forma simplificada:
+
+        grid-column: span 2;
+
+        O elemento ocupa 2 colunas a partir da posição atual.
+
+        Muito utilizado quando não importa exatamente
+        onde começa, apenas quantas colunas ocupa.
+        ============================================================
+        */
+
+
+        /*
+        ============================================================
+        EXEMPLO 2
+        MESCLANDO LINHAS
+        ============================================================
+
+        grid-row funciona exatamente igual ao grid-column.
+
+        grid-row: início / fim;
+
+        O item abaixo ocupará duas linhas.
+        */
+
+        .grid-linhas {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-rows: repeat(3, 120px);
+
+            gap: 10px;
+        }
+
+        .linha-grande {
+
+            grid-row: 1 / 3;
+
+            background: seagreen;
+        }
+
+        /*
+        ============================================================
+        Também existe:
+
+        grid-row: span 2;
+
+        Ocupa duas linhas.
+        ============================================================
+        */
+
+
+        /*
+        ============================================================
+        EXEMPLO 3
+        MESCLANDO LINHAS E COLUNAS
+        ============================================================
+
+        Podemos utilizar grid-column e grid-row
+        ao mesmo tempo.
+
+        Assim o elemento cresce horizontalmente
+        e verticalmente.
+        */
+
+        .grid-mesclagem {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-rows: repeat(3, 120px);
+
+            gap: 10px;
+        }
+
+        .caixa-destaque {
+
+            grid-column: 1 / 3;
+
+            grid-row: 1 / 3;
+
+            background: orange;
+        }
+
+        /*
+        ============================================================
+        EXEMPLO 4
+        PROPRIEDADE SIMPLIFICADA
+
+        grid-area
+
+        Podemos escrever:
+
+        grid-row
+        +
+        grid-column
+
+        em apenas uma linha.
+
+        Sintaxe:
+
+        grid-area:
+        linha início /
+        coluna início /
+        linha fim /
+        coluna fim;
+        */
+
+        .grid-area {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-rows: repeat(3, 120px);
+
+            gap: 10px;
+        }
+
+        .area {
+
+            /*
+            linha começa na 1
+
+            coluna começa na 2
+
+            linha termina na 3
+
+            coluna termina na 5
+            */
+
+            grid-area: 1 / 2 / 3 / 5;
+
+            background: mediumvioletred;
+        }
+
+
+        /*
+        ============================================================
+        EXEMPLO 5
+        NOMEAÇÃO DAS LINHAS
+
+        Podemos dar nomes para as linhas.
+
+        Isso torna o código MUITO mais legível
+        em projetos grandes.
+        */
+
+        .grid-linhas-nomeadas {
+
+            display: grid;
+
+            grid-template-columns:
+
+                [inicio]
+                1fr
+
+                [meio]
+                1fr
+
+                [fim]
+                1fr;
+
+            gap: 10px;
+        }
+
+        .nomeado {
+
+            /*
+            Em vez de usar números,
+            utilizamos os nomes.
+
+            inicio -> fim
+            */
+
+            grid-column: inicio / fim;
+
+            background: royalblue;
+        }
+
+
+        /*
+        ============================================================
+        EXEMPLO 6
+        GRID TEMPLATE AREAS
+
+        O recurso mais utilizado em layouts completos.
+
+        Podemos desenhar o layout usando nomes.
+
+        É muito fácil visualizar a estrutura.
+
+        header ocupa toda primeira linha.
+
+        menu ocupa a lateral.
+
+        content ocupa o restante.
+
+        footer ocupa toda última linha.
+        */
+
+        .layout {
+
+            display: grid;
+
+            gap: 10px;
+
+            grid-template-columns: 220px 1fr;
+
+            grid-template-rows:
+                80px
+                250px
+                80px;
+
+            grid-template-areas:
+
+                "header header"
+
+                "menu content"
+
+                "footer footer";
+        }
+
+        /*
+        Cada elemento recebe um nome
+        utilizando grid-area.
+        */
+
+        .header {
+
+            grid-area: header;
+
+            background: #3b82f6;
+        }
+
+        .menu {
+
+            grid-area: menu;
+
+            background: #10b981;
+        }
+
+        .content {
+
+            grid-area: content;
+
+            background: #f97316;
+        }
+
+        .footer {
+
+            grid-area: footer;
+
+            background: #6366f1;
+        }

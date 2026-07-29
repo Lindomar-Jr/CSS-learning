@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid - Mesclagem, Nomeação e Propriedade Simplificada</title>
+
+    <link rel="stylesheet" href="../grid/css/mesclar-linhas_colunas.css">
+
+</head>
+
+<body>
+
+    <h1>CSS Grid - Mesclagem, Nomeação e Propriedade Simplificada</h1>
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 1 -->
+    <!-- ====================================================== -->
+
+    <h2>1 - Mesclando Colunas (grid-column)</h2>
+
+    <div class="container grid-colunas">
+
+        <div class="item coluna-grande">Ocupa 2 Colunas</div>
+
+        <div class="item">2</div>
+
+        <div class="item">3</div>
+
+        <div class="item">4</div>
+
+        <div class="item">5</div>
+
+        <div class="item">6</div>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 2 -->
+    <!-- ====================================================== -->
+
+    <h2>2 - Mesclando Linhas (grid-row)</h2>
+
+    <div class="container grid-linhas">
+
+        <div class="item linha-grande">Ocupa 2 Linhas</div>
+
+        <div class="item">2</div>
+
+        <div class="item">3</div>
+
+        <div class="item">4</div>
+
+        <div class="item">5</div>
+
+        <div class="item">6</div>
+
+        <div class="item">7</div>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 3 -->
+    <!-- ====================================================== -->
+
+    <h2>3 - Mesclando Linhas e Colunas</h2>
+
+    <div class="container grid-mesclagem">
+
+        <div class="item caixa-destaque">2 Linhas + 2 Colunas</div>
+
+        <div class="item">2</div>
+
+        <div class="item">3</div>
+
+        <div class="item">4</div>
+
+        <div class="item">5</div>
+
+        <div class="item">6</div>
+
+        <div class="item">7</div>
+
+        <div class="item">8</div>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 4 -->
+    <!-- ====================================================== -->
+
+    <h2>4 - Propriedade Simplificada (grid-area)</h2>
+
+    <div class="container grid-area">
+
+        <div class="item area">
+            grid-area
+        </div>
+
+        <div class="item">2</div>
+
+        <div class="item">3</div>
+
+        <div class="item">4</div>
+
+        <div class="item">5</div>
+
+        <div class="item">6</div>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 5 -->
+    <!-- ====================================================== -->
+
+    <h2>5 - Nomeação das Linhas</h2>
+
+    <div class="container grid-linhas-nomeadas">
+
+        <div class="item nomeado">
+            inicio / fim
+        </div>
+
+        <div class="item">2</div>
+
+        <div class="item">3</div>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- EXEMPLO 6 -->
+    <!-- ====================================================== -->
+
+    <h2>6 - Grid Template Areas</h2>
+
+    <div class="container layout">
+
+        <div class="item header">
+            Header
+        </div>
+
+        <div class="item menu">
+            Menu
+        </div>
+
+        <div class="item content">
+            Conteúdo
+        </div>
+
+        <div class="item footer">
+            Footer
+        </div>
+
+    </div>
+
+    <!--
+    ============================================================
+    RESUMO
+    ============================================================
+
+    grid-column
+        Controla a largura do item.
+
+    grid-row
+        Controla a altura do item.
+
+    grid-area
+        Une grid-row e grid-column em uma única propriedade.
+
+    grid-template-areas
+        Permite desenhar o layout utilizando nomes.
+
+    Nomeação de linhas
+        Deixa o código mais organizado e legível.
+
+    ============================================================
+
+    DICA DE DESENVOLVEDOR SÊNIOR
+
+    Para pequenos exemplos de estudo, utilize grid-column
+    e grid-row para entender como o Grid funciona.
+
+    Para layouts reais (sites, dashboards, landing pages
+    e sistemas), prefira grid-template-areas.
+
+    Além de tornar o código muito mais legível, facilita
+    alterações futuras e a manutenção por toda a equipe.
+
+    Essa é a abordagem mais comum em projetos profissionais.
+    ============================================================
+    -->
+
+</body>
+
+</html>
