@@ -1,0 +1,237 @@
+  /*
+        ============================================================
+        CSS GRID - ALINHAMENTOS
+        ============================================================
+
+        Existem dois tipos de alinhamento no Grid:
+
+        1) Alinhamento do GRID inteiro (Container)
+           - justify-content
+           - align-content
+
+        2) Alinhamento dos ITENS dentro de cada célula
+           - justify-items
+           - align-items
+
+        Uma dica simples para lembrar:
+
+        CONTENT = movimenta toda a grade.
+
+        ITEMS = movimenta apenas o conteúdo de cada célula.
+        */
+
+
+        body{
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ececec;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        h2{
+            margin-top: 60px;
+        }
+
+        /*
+        ============================================================
+        ESTILO PADRÃO DOS CONTAINERS
+        ============================================================
+        */
+
+        .container{
+
+            width: 700px;
+            height: 350px;
+
+            border: 3px solid #000;
+            background: white;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 120px);
+            grid-template-rows: repeat(2, 80px);
+
+            gap: 15px;
+
+            margin-bottom: 50px;
+
+        }
+
+        /*
+        ============================================================
+        ESTILO DOS ITENS
+        ============================================================
+        */
+
+        .item{
+
+            background: royalblue;
+            color: white;
+
+            font-size: 22px;
+            font-weight: bold;
+
+            width: 70px;
+            height: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /*
+        ============================================================
+        JUSTIFY-CONTENT
+        ============================================================
+
+        Alinha TODA A GRADE no eixo horizontal.
+
+        Imagine que o Grid não ocupa toda a largura
+        disponível do container.
+
+        O justify-content decide onde a grade ficará.
+        */
+
+        .justify-start{
+            justify-content: start;
+        }
+
+        .justify-center{
+            justify-content: center;
+        }
+
+        .justify-end{
+            justify-content: end;
+        }
+
+        .justify-space-between{
+            justify-content: space-between;
+        }
+
+        .justify-space-around{
+            justify-content: space-around;
+        }
+
+        .justify-space-evenly{
+            justify-content: space-evenly;
+        }
+
+
+        /*
+        ============================================================
+        ALIGN-CONTENT
+        ============================================================
+
+        Alinha TODA A GRADE verticalmente.
+
+        Funciona apenas quando sobra espaço
+        na altura do container.
+        */
+
+        .align-start{
+            align-content: start;
+        }
+
+        .align-center{
+            align-content: center;
+        }
+
+        .align-end{
+            align-content: end;
+        }
+
+        .align-space-between{
+            align-content: space-between;
+        }
+
+        .align-space-around{
+            align-content: space-around;
+        }
+
+        .align-space-evenly{
+            align-content: space-evenly;
+        }
+
+
+        /*
+        ============================================================
+        JUSTIFY-ITEMS
+        ============================================================
+
+        Alinha TODOS os itens dentro da sua própria célula
+        horizontalmente.
+
+        O tamanho da célula continua o mesmo.
+
+        Apenas o item muda de posição.
+        */
+
+        .items-start{
+            justify-items: start;
+        }
+
+        .items-center{
+            justify-items: center;
+        }
+
+        .items-end{
+            justify-items: end;
+        }
+
+        .items-stretch{
+
+            /*
+            stretch faz o item ocupar toda a largura
+            disponível da célula.
+
+            Como o item possui width fixa,
+            o stretch não será percebido.
+
+            Para funcionar, remova a largura.
+            */
+
+            justify-items: stretch;
+
+        }
+
+
+        /*
+        ============================================================
+        ALIGN-ITEMS
+        ============================================================
+
+        Alinha TODOS os itens verticalmente
+        dentro da célula.
+        */
+
+        .align-items-start{
+            align-items: start;
+        }
+
+        .align-items-center{
+            align-items: center;
+        }
+
+        .align-items-end{
+            align-items: end;
+        }
+
+        .align-items-stretch{
+
+            /*
+            stretch ocupa toda a altura da célula.
+
+            Como os itens possuem altura fixa,
+            o efeito não aparecerá.
+
+            Remova o height para visualizar.
+            */
+
+            align-items: stretch;
+
+        }
